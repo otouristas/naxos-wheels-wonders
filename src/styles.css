@@ -160,10 +160,7 @@
   max-width: 88rem;
   margin-inline: auto;
   padding-inline: 1.5rem;
-}
-
-@media (min-width: 768px) {
-  @utility container-editorial {
+  @media (min-width: 768px) {
     padding-inline: 2.5rem;
   }
 }
