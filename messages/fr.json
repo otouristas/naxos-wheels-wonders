@@ -1,0 +1,427 @@
+{
+  "nav": {
+    "fleet": "Notre flotte",
+    "guide": "Guide de Naxos",
+    "guideHub": "Tous les guides",
+    "guideHowToGet": "Comment venir à Naxos",
+    "guideBeaches": "Guide des plages",
+    "guideVillages": "Villages",
+    "guideRoadTrip": "Itinéraire road trip",
+    "guideDriving": "Conduire à Naxos",
+    "blog": "Blog",
+    "about": "À propos",
+    "faq": "FAQ",
+    "reviews": "Avis",
+    "contact": "Contact",
+    "book": "Réserver en ligne",
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu",
+    "language": "Langue",
+    "askTouristas": "Demander à Touristas AI"
+  },
+  "indicators": {
+    "rating": "Note 5.0 · {count} avis Google",
+    "airport": "Livraison gratuite à l'aéroport",
+    "port": "Livraison gratuite au port",
+    "cancellation": "Annulation gratuite",
+    "mileage": "Kilométrage illimité",
+    "driver": "Conducteur supplémentaire gratuit",
+    "local": "Entreprise familiale locale depuis 1998"
+  },
+  "cta": {
+    "bookOnline": "Réserver en ligne",
+    "bookNow": "Réserver",
+    "checkPrices": "Voir prix et disponibilités",
+    "call": "Appelez-nous",
+    "whatsapp": "WhatsApp",
+    "viewFleet": "Découvrir la flotte",
+    "viewCar": "Détails",
+    "reserve": "Réserver cette voiture",
+    "findCar": "Trouvez la voiture idéale",
+    "readMore": "Lire la suite",
+    "seeAll": "Tout voir",
+    "backToFleet": "Retour à la flotte",
+    "explore": "Explorer Naxos",
+    "askAi": "Demander à Touristas AI"
+  },
+  "hero": {
+    "eyebrow": "Naxos · Cyclades · Grèce",
+    "titleLead": "L'île,",
+    "titleEmphasis": "à vos conditions.",
+    "subtitle": "Louez une voiture à Naxos auprès de l'équipe locale la plus appréciée de l'île. Livraison gratuite à l'aéroport et au port, prix transparents et une flotte toujours prête pour l'île.",
+    "ratingLabel": "Note {rating} sur {count} avis",
+    "stat1Value": "27 ans",
+    "stat1Label": "Sur l'île",
+    "stat2Value": "Gratuit",
+    "stat2Label": "Livraison aéroport et port",
+    "stat3Value": "24/7",
+    "stat3Label": "Assistance routière",
+    "stat4Value": "0€",
+    "stat4Label": "Frais cachés"
+  },
+  "booking": {
+    "title": "Réservez votre voiture",
+    "subtitle": "Annulation gratuite · Meilleur tarif garanti",
+    "pageEyebrow": "Disponibilité en temps réel",
+    "pageTitle": "Réservez une voiture à Naxos",
+    "pageSubtitle": "Consultez les prix et disponibilités en temps réel, puis réservez en quelques étapes.",
+    "resultsEyebrow": "Votre trajet",
+    "resultsTitle": "Voitures disponibles",
+    "editSearch": "Modifier les dates",
+    "engineError": "Impossible de charger la disponibilité pour le moment.",
+    "pickupLocation": "Lieu de prise en charge",
+    "dropoffLocation": "Lieu de restitution",
+    "pickupDate": "Date de prise en charge",
+    "dropoffDate": "Date de restitution",
+    "sameLocation": "Identique à la prise en charge",
+    "search": "Rechercher les voitures disponibles",
+    "locations": {
+      "airport": "Aéroport de Naxos (JNX)",
+      "port": "Port de Naxos",
+      "accommodationNear": "Votre hébergement, jusqu'à 10 km du port",
+      "accommodationFar": "Votre hébergement, plus de 10 km du port"
+    },
+    "badge": "Meilleurs tarifs",
+    "pickupGroup": "Prise en charge",
+    "dropoffGroup": "Restitution",
+    "pickupTime": "Heure de prise en charge",
+    "dropoffTime": "Heure de restitution",
+    "hour": "Heure",
+    "minute": "Minutes",
+    "filters": "Filtres",
+    "reco": {
+      "title": "Recommandations pour vos dates",
+      "subtitle": "Sélectionnées parmi les voitures disponibles pour votre voyage.",
+      "angles": {
+        "bestValue": "Meilleur rapport qualité-prix",
+        "popular": "Le plus populaire",
+        "family": "Idéal pour les familles",
+        "eco": "Choix écologique"
+      },
+      "save": "Économisez {pct}%",
+      "perDayApprox": "≈ €{price}/jour",
+      "included": "Assurance et kilométrage illimité inclus",
+      "book": "Réserver cette voiture",
+      "details": "Voir les détails",
+      "urgency": "Les voitures pour ces dates partent vite, réservez dès aujourd'hui."
+    }
+  },
+  "home": {
+    "whyTitle": "Pourquoi les voyageurs nous choisissent",
+    "whySubtitle": "Louez en toute confiance, des prix transparents et un service de qualité de la part d'une famille locale qui connaît chaque route de Naxos.",
+    "why": {
+      "priceTitle": "Meilleurs tarifs, sans surprise",
+      "priceBody": "Des prix transparents avec toutes les taxes, l'assurance et le kilométrage illimité inclus. Ce que vous voyez est ce que vous payez.",
+      "deliveryTitle": "Livraison gratuite, partout",
+      "deliveryBody": "Nous vous accueillons à l'aéroport, au port ou à votre hôtel, et récupérons la voiture où vous le souhaitez.",
+      "fleetTitle": "Une flotte toujours prête",
+      "fleetBody": "Des citadines économiques aux hybrides, SUV et 7 places, chaque voiture est entretenue et prête pour les routes de Naxos.",
+      "localTitle": "Une vraie expertise locale",
+      "localBody": "Des années sur l'île signifient des conseils d'initiés sur les plages, les villages et les routes à ne pas manquer."
+    },
+    "fleetTitle": "Choisissez votre voiture",
+    "fleetSubtitle": "Une voiture pour chaque type de séjour à Naxos, des trajets électriques silencieux aux aventures familiales à sept places.",
+    "aiTitle": "Vous hésitez sur la voiture ?",
+    "aiSubtitle": "Répondez à quelques questions et laissez Touristas AI trouver la voiture idéale pour votre séjour.",
+    "aiPoweredBy": "propulsé par Touristas AI",
+    "guideTitle": "Explorez Naxos, guides locaux gratuits",
+    "guideSubtitle": "Plages, villages, itinéraires et conseils de conduite, tout pour planifier la semaine parfaite.",
+    "reviewsTitle": "Plébiscités par les voyageurs",
+    "reviewsSubtitle": "Note de {rating} sur 5 selon {count} avis Google vérifiés.",
+    "locationsTitle": "Prise en charge et restitution gratuites",
+    "locationsSubtitle": "Nous livrons et récupérons votre voiture à tous ces endroits, sans frais supplémentaires.",
+    "blogTitle": "Du journal",
+    "blogSubtitle": "Histoires, itinéraires et conseils pratiques pour votre voyage à Naxos.",
+    "ctaTitle": "Votre aventure à Naxos commence ici",
+    "ctaSubtitle": "Réservez en ligne en quelques minutes, ou écrivez-nous et nous nous occupons de tout.",
+    "trust": {
+      "taxes": "Toutes taxes et TVA incluses",
+      "insurance": "Assurance incluse",
+      "mileage": "Kilométrage illimité",
+      "support": "Assistance 24/7"
+    }
+  },
+  "fleet": {
+    "eyebrow": "La Flotte",
+    "title": "Chaque voiture, prête pour l'île.",
+    "subtitle": "Entièrement assurées, kilométrage illimité, livraison gratuite. Filtrez par catégorie ou laissez Touristas AI choisir pour vous.",
+    "all": "Toutes les voitures",
+    "from": "à partir de",
+    "perDay": "/ jour",
+    "categories": {
+      "Small": "Petites",
+      "Medium": "Moyennes",
+      "Family": "Familiales",
+      "SUV": "SUV",
+      "Hybrid": "Hybrides",
+      "Electric": "Électriques",
+      "7-Seater": "7 places"
+    },
+    "specs": {
+      "transmission": "Boîte de vitesses",
+      "seats": "Places",
+      "doors": "Portes",
+      "luggage": "Bagages",
+      "fuel": "Carburant",
+      "engine": "Moteur",
+      "ac": "Climatisation",
+      "manual": "Manuelle",
+      "automatic": "Automatique",
+      "petrol": "Essence",
+      "diesel": "Diesel",
+      "hybrid": "Hybride",
+      "electric": "Électrique",
+      "yes": "Oui"
+    },
+    "idealForLabel": "Idéale pour",
+    "includedLabel": "Chaque location inclut",
+    "similarLabel": "Voitures similaires",
+    "detailIntro": "À propos de cette voiture",
+    "priceNote": "Le prix inclut toutes les taxes. Annulation gratuite.",
+    "sixDayNote": "ex. {price}€ pour 6 jours",
+    "googleRated": "Note {rating} · {count} avis Google"
+  },
+  "ai": {
+    "title": "Trouvez la voiture idéale",
+    "poweredBy": "propulsé par Touristas AI",
+    "intro": "Parlez-moi de votre voyage et je vous recommanderai les meilleures voitures de la flotte Naxos Auto Rent.",
+    "placeholder": "ex. 2 adultes + 2 enfants, une semaine en août, quelques villages de montagne et petit budget",
+    "send": "Obtenir ma recommandation",
+    "thinking": "Recherche des voitures…",
+    "reset": "Recommencer",
+    "disclaimer": "Les recommandations sont générées par l'IA pour vous aider à choisir. Prix et disponibilités confirmés à la réservation.",
+    "matches": "Vos voitures idéales",
+    "whyMatch": "Pourquoi cette voiture",
+    "quiz": {
+      "group": "Combien de voyageurs ?",
+      "budget": "Quel est votre budget ?",
+      "vibe": "Quel type de voyage ?",
+      "transmission": "Préférence de boîte ?",
+      "groupOptions": {
+        "solo": "1–2 personnes",
+        "family": "3–4 personnes",
+        "group": "5–7 personnes"
+      },
+      "budgetOptions": {
+        "low": "Prix le plus bas",
+        "mid": "Équilibré",
+        "high": "Confort maximal"
+      },
+      "vibeOptions": {
+        "city": "Ville et plages",
+        "explore": "Villages de montagne",
+        "family": "Famille et bagages",
+        "eco": "Éco / électrique"
+      },
+      "transmissionOptions": {
+        "any": "Peu importe",
+        "manual": "Manuelle",
+        "automatic": "Automatique"
+      }
+    }
+  },
+  "guide": {
+    "eyebrow": "Guide de Naxos",
+    "title": "Explorez Naxos, à votre façon.",
+    "subtitle": "Des guides locaux gratuits et sincères sur les plages, les villages, les routes et les itinéraires de Naxos, écrits par l'équipe qui les parcourt chaque jour.",
+    "readGuide": "Lire le guide",
+    "relatedCar": "Voiture recommandée pour ce voyage",
+    "backToGuide": "Retour au guide",
+    "inThisGuide": "Dans ce guide",
+    "minRead": "{min} min de lecture",
+    "faqTitle": "Questions fréquentes",
+    "relatedGuides": "Guides associés",
+    "relatedReading": "Plus dans le journal",
+    "ctaTitle": "Prêt à explorer Naxos ?",
+    "ctaSubtitle": "Réservez votre voiture en quelques minutes. Livraison gratuite, kilométrage illimité, aucuns frais cachés.",
+    "discoverLead": "Continuez à explorer avec notre partenaire Discover Cyclades : ferrys, hôtels, activités et un planificateur IA pour Naxos."
+  },
+  "blog": {
+    "eyebrow": "Le Journal",
+    "title": "Récits et conseils de voyage à Naxos.",
+    "subtitle": "Itinéraires, secrets locaux et conseils pratiques pour profiter au maximum de votre séjour sur l'île.",
+    "readArticle": "Lire l'article",
+    "backToBlog": "Retour au journal",
+    "published": "Publié",
+    "relatedCars": "Voitures pour ce voyage",
+    "faqTitle": "Questions fréquentes",
+    "relatedGuides": "Guides associés",
+    "relatedReading": "Continuer la lecture"
+  },
+  "about": {
+    "eyebrow": "À propos",
+    "title": "Une famille locale, à votre service depuis 1998.",
+    "body1": "Naxos Auto Rent est une entreprise familiale de location de voitures basée à Galanado, au cœur de Naxos. Depuis plus de vingt ans, nous aidons des voyageurs du monde entier à découvrir l'île comme elle mérite de l'être, librement, à leur rythme.",
+    "body2": "Nous ne sommes pas une chaîne internationale sans visage. Quand vous louez chez nous, vous êtes accompagné par de vrais habitants qui connaissent chaque plage, chaque village et chaque route de Naxos, et qui veulent sincèrement rendre votre voyage inoubliable.",
+    "body3": "C'est pourquoi tant de nos clients reviennent et nous envoient leurs amis. Louez local, soutenez une vraie famille de Naxos et voyagez avec des gens qui vous traitent comme un voisin.",
+    "stat1Value": "1998",
+    "stat1Label": "Au service de l'île",
+    "stat2Value": "5.0★",
+    "stat2Label": "Sur {count} avis",
+    "stat3Value": "12 000+",
+    "stat3Label": "Voyageurs satisfaits",
+    "stat4Value": "100%",
+    "stat4Label": "Locaux et indépendants"
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Parlez à un local, à tout moment.",
+    "subtitle": "Des questions, une demande spéciale ou de l'aide pour planifier votre voyage ? Nous répondons vite, généralement en moins d'une heure.",
+    "phone": "Téléphone",
+    "email": "Email",
+    "office": "Bureau",
+    "hours": "Disponibles 24/7 par téléphone",
+    "whatsappCta": "Discuter sur WhatsApp",
+    "callCta": "Appeler maintenant",
+    "getDirections": "Itinéraire",
+    "mapTitle": "Nos emplacements",
+    "mapSubtitle": "Prise en charge et restitution gratuites aux quatre points, bureau, port, aéroport et Naxos Town.",
+    "maps": {
+      "office": "Bureau · Galanado",
+      "port": "Port de Naxos",
+      "airport": "Aéroport de Naxos (JNX)",
+      "town": "Naxos Town"
+    },
+    "formName": "Votre nom",
+    "formEmail": "Votre email",
+    "formMessage": "Comment pouvons-nous aider ?",
+    "formSubmit": "Envoyer le message",
+    "formNote": "Vous préférez parler maintenant ? Appelez ou écrivez-nous sur WhatsApp pour une réponse plus rapide."
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "title": "Tout ce que vous devez savoir.",
+    "subtitle": "Vous ne trouvez pas votre réponse ? Appelez ou écrivez-nous sur WhatsApp à tout moment, nous sommes là 24/7.",
+    "items": {
+      "insured": {
+        "q": "Les véhicules sont-ils assurés ?",
+        "a": "Oui. Tous les véhicules Naxos Auto Rent sont assurés en responsabilité civile (TPI). Vous pouvez ajouter une garantie dommages-collision (CDW) moyennant un léger supplément journalier pour plus de tranquillité."
+      },
+      "accident": {
+        "q": "Que faire en cas d'accident ou de dommage ?",
+        "a": "D'abord, mettez-vous en sécurité, à l'écart de la circulation. Appelez ensuite le numéro 24h/24 indiqué sur votre contrat et nous vous guiderons dans toute la procédure. En cas de blessé, appelez toujours la police grecque."
+      },
+      "pickup": {
+        "q": "Où récupérer et rendre la voiture ?",
+        "a": "Vous pouvez la récupérer au port ou à l'aéroport de Naxos, ou nous pouvons la livrer à votre hébergement. La voiture est rendue à un lieu convenu, la livraison et la reprise sont toujours gratuites."
+      },
+      "breakdown": {
+        "q": "Que se passe-t-il en cas de panne ?",
+        "a": "Nos véhicules sont soigneusement entretenus pour éviter les problèmes mécaniques. En cas de panne, nous fournissons une assistance routière 24h/24 et un remplacement immédiat pour poursuivre votre voyage."
+      },
+      "payment": {
+        "q": "Comment puis-je payer ?",
+        "a": "Vous pouvez payer en espèces, par PayPal, virement bancaire ou carte de crédit."
+      },
+      "howToRent": {
+        "q": "Comment louer une voiture ?",
+        "a": "Louez en 3 étapes via notre système de réservation en ligne, le formulaire de contact, ou en appelant le +30 693 099 3670. Si vous réservez en ligne, nous vous contacterons pour confirmer."
+      },
+      "contactTime": {
+        "q": "Quand puis-je vous contacter ?",
+        "a": "Vous pouvez nous joindre 24/7 par téléphone au +30 693 099 3670 ou +30 697 443 0785."
+      },
+      "fines": {
+        "q": "Qui est responsable des amendes de stationnement ou infractions ?",
+        "a": "Vous êtes responsable des amendes de stationnement ou infractions au code de la route durant la période de location."
+      }
+    }
+  },
+  "reviews": {
+    "eyebrow": "Avis",
+    "title": "Ce que disent nos voyageurs.",
+    "subtitle": "Note de {rating} sur 5 selon {count} avis Google vérifiés.",
+    "writeReview": "Rédiger un avis",
+    "verified": "Avis Google vérifié",
+    "showing": "Affichage de {shown} avis Google récents de notre profil.",
+    "googleCount": "{count} avis Google",
+    "viewOnGoogle": "Voir sur Google"
+  },
+  "footer": {
+    "tagline": "Naxos Rent A Car by Auto Rent, meilleurs tarifs, livraison gratuite. Entreprise familiale locale, à votre service depuis 1998.",
+    "explore": "Explorer",
+    "company": "Entreprise",
+    "contact": "Contact",
+    "quickFind": "Accès rapide",
+    "terms": "Conditions générales",
+    "privacy": "Politique de confidentialité",
+    "perks": {
+      "title": "Chaque location inclut",
+      "mileage": "Kilométrage illimité gratuit",
+      "airport": "Livraison gratuite à l'aéroport",
+      "port": "Livraison gratuite au port",
+      "driver": "Conducteur supplémentaire gratuit"
+    },
+    "rights": "Tous droits réservés.",
+    "registration": "ΜΗ.Τ.Ε {mhte} · Γ.Ε.ΜΗ {gemi}",
+    "guide": "Guide de Naxos",
+    "discover": "Discover Cyclades",
+    "dcHowToGet": "Comment y aller",
+    "dcFerries": "Ferrys vers Naxos",
+    "dcThings": "Que faire",
+    "dcGuide": "Guide de l'île de Naxos",
+    "dcHotels": "Hôtels à Naxos",
+    "touristas": "Planificateur Touristas AI",
+    "dcPartner": "Partenaire",
+    "designedBy": "Conçu par",
+    "poweredBy": "Propulsé par"
+  },
+  "legal": {
+    "termsTitle": "Conditions générales",
+    "privacyTitle": "Politique de confidentialité",
+    "lastUpdated": "Dernière mise à jour"
+  },
+  "notFound": {
+    "title": "Cette route ne mène nulle part.",
+    "subtitle": "La page que vous cherchez n'est pas ici, mais l'île vous attend toujours.",
+    "home": "Retour à l'accueil",
+    "fleet": "Parcourir la flotte"
+  },
+  "error": {
+    "title": "Quelque chose a quitté la route.",
+    "subtitle": "Une erreur inattendue s'est produite. Veuillez réessayer.",
+    "retry": "Réessayer",
+    "home": "Accueil"
+  },
+  "chat": {
+    "title": "Touristas AI",
+    "subtitle": "Votre concierge Naxos Auto Rent",
+    "statusLive": "En ligne",
+    "greeting": "Bonjour ! Je peux vous aider à choisir la bonne voiture pour Naxos. Parlez-moi de votre voyage.",
+    "placeholder": "Demandez voitures, plages, livraison…",
+    "placeholderDates": "Quand avez-vous besoin de la voiture ?",
+    "placeholderName": "Votre nom ?",
+    "placeholderEmail": "Votre e-mail ?",
+    "placeholderPhone": "Téléphone / WhatsApp ?",
+    "send": "Envoyer",
+    "clear": "Effacer",
+    "close": "Fermer",
+    "open": "Ouvrir Touristas AI",
+    "expand": "Agrandir",
+    "collapse": "Réduire",
+    "unavailable": "Je n'ai pas pu répondre. Réessayez ou contactez-nous sur WhatsApp.",
+    "poweredBy": "Propulsé par",
+    "poweredBrand": "Touristas AI",
+    "disclaimer": "Les suggestions sont indicatives, confirmez la disponibilité à la réservation.",
+    "suggestBook": "Aidez-moi à réserver une voiture",
+    "suggestFamily": "Voiture pour une famille de 4",
+    "suggestFleet": "Montrez-moi la flotte",
+    "suggestBeaches": "Meilleure voiture pour les plages",
+    "tipAsk": "Posez-moi vos questions sur les voitures",
+    "tipBook": "Je peux vous aider à réserver",
+    "tipFamily": "Besoin d'une voiture familiale ?",
+    "tipEco": "Essayez nos électriques et hybrides",
+    "tipFerry": "Livraison gratuite au port et à l'aéroport",
+    "tipBeaches": "Plages ? Trouvons la bonne voiture",
+    "fromDayShort": "à partir de €{price}/jour",
+    "askRate": "Demander un tarif",
+    "seatsShort": "{count} places",
+    "toolBook": "Réserver",
+    "toolWhatsApp": "WhatsApp",
+    "toolView": "Voir",
+    "toolRecommend": "Recommandé pour vous",
+    "toolPrefill": "Continuer la réservation",
+    "toolGuide": "Guides associés",
+    "toolRate": "Environ €{price}/jour"
+  }
+}

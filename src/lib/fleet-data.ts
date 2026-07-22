@@ -1,13 +1,16 @@
-import carCompact from "@/assets/car-compact.jpg";
-import carSuv from "@/assets/car-suv.jpg";
-import carCabrio from "@/assets/car-cabrio.jpg";
-import carMinivan from "@/assets/car-minivan.jpg";
-import carElectric from "@/assets/car-electric.jpg";
+export type VehicleCategory =
+  | "Small"
+  | "Medium"
+  | "Family"
+  | "SUV"
+  | "Hybrid"
+  | "Electric"
+  | "7-Seater";
 
 export type Vehicle = {
   slug: string;
   name: string;
-  category: "Economy" | "SUV" | "Cabrio" | "Compact" | "Family" | "Hybrid" | "Electric" | "7-Seater";
+  category: VehicleCategory;
   transmission: "Manual" | "Automatic";
   seats: number;
   doors: number;
@@ -15,17 +18,61 @@ export type Vehicle = {
   ac: boolean;
   fuel: "Petrol" | "Diesel" | "Hybrid" | "Electric";
   engineCc?: number;
+  /** Derived from the live 6-day total. */
   fromPerDay: number;
+  /** Live 6-day total (EUR) from the booking engine. */
+  sixDayTotal: number;
   image: string;
+  gallery: string[];
   tagline: string;
-  features: string[];
+  /** Short "vibe" chips shown on cards + detail. */
+  vibes: string[];
+  /** One-line "ideal for" positioning. */
+  idealFor: string;
+  seoDescription: string;
+  /** Everything included in the rate. */
+  included: string[];
+  similarSlugs: string[];
 };
+
+const includedBase = [
+  "All taxes & VAT",
+  "Free additional driver",
+  "Free airport & port delivery",
+  "Third-Party Insurance (TPI)",
+  "Unlimited mileage",
+  "24/7 road assistance",
+  "Theft protection",
+];
 
 export const fleet: Vehicle[] = [
   {
-    slug: "fiat-panda-manual",
+    slug: "peugeot-108",
+    name: "Peugeot 108",
+    category: "Small",
+    transmission: "Manual",
+    seats: 4,
+    doors: 5,
+    luggage: 1,
+    ac: true,
+    fuel: "Petrol",
+    engineCc: 998,
+    fromPerDay: 30,
+    sixDayTotal: 180,
+    image: "/fleet/peugeot-108.jpg",
+    gallery: ["/fleet/peugeot-108.jpg"],
+    tagline: "The compact that parks anywhere in Chora.",
+    vibes: ["City-nimble", "Cheapest to run", "Two-up getaways"],
+    idealFor: "Ideal for couples and duos who want the lowest daily rate and stress-free parking.",
+    seoDescription:
+      "Looking for a small car rental in Naxos? The Peugeot 108 is a compact, fuel-efficient choice, perfect for couples and friends who want easy driving and simple parking in narrow island streets. Book with Naxos Auto Rent and enjoy free airport or port delivery.",
+    included: includedBase,
+    similarSlugs: ["fiat-panda", "dacia-spring-electric"],
+  },
+  {
+    slug: "fiat-panda",
     name: "Fiat Panda",
-    category: "Economy",
+    category: "Medium",
     transmission: "Manual",
     seats: 5,
     doors: 5,
@@ -33,26 +80,41 @@ export const fleet: Vehicle[] = [
     ac: true,
     fuel: "Petrol",
     engineCc: 1242,
-    fromPerDay: 50,
-    image: carCompact,
-    tagline: "Slip through Chora's alleys and park anywhere.",
-    features: ["Full insurance included", "Unlimited mileage", "Airport & port delivery", "Bluetooth · USB · AC"],
+    fromPerDay: 35,
+    sixDayTotal: 210,
+    image: "/fleet/fiat-panda.png",
+    gallery: ["/fleet/fiat-panda.png"],
+    tagline: "The legendary island runabout that slips through every alley.",
+    vibes: ["Island classic", "Great value", "Beach-hopper"],
+    idealFor:
+      "Ideal for small families and groups of friends who want a practical, easy-to-drive favourite.",
+    seoDescription:
+      "The legendary Fiat Panda is a practical, easy-to-drive car rental in Naxos, ideal for couples, small families and groups of friends. Compact yet comfortable, it handles narrow streets and scenic island roads with confidence.",
+    included: includedBase,
+    similarSlugs: ["peugeot-108", "citroen-c3"],
   },
   {
-    slug: "fiat-panda-automatic",
-    name: "Fiat Panda Automatic",
-    category: "Compact",
-    transmission: "Automatic",
-    seats: 4,
+    slug: "citroen-c3",
+    name: "Citroen C3",
+    category: "Family",
+    transmission: "Manual",
+    seats: 5,
     doors: 5,
-    luggage: 1,
+    luggage: 2,
     ac: true,
     fuel: "Petrol",
-    engineCc: 1242,
-    fromPerDay: 65,
-    image: carCompact,
-    tagline: "Automatic ease for the island's tight village lanes.",
-    features: ["Automatic gearbox", "Full insurance", "Unlimited mileage", "Free delivery"],
+    engineCc: 1200,
+    fromPerDay: 38,
+    sixDayTotal: 228,
+    image: "/fleet/citroen-c3.jpg",
+    gallery: ["/fleet/citroen-c3.jpg"],
+    tagline: "Stylish, comfortable and endlessly practical.",
+    vibes: ["Stylish", "Comfy ride", "Easy parking"],
+    idealFor: "Ideal for couples and small families who want a little more comfort and style.",
+    seoDescription:
+      "The Citroen C3 is a stylish, fuel-efficient compact car hire in Naxos, perfect for couples, small families and friends. Its compact size makes it ideal for narrow streets and easy parking in busy villages.",
+    included: includedBase,
+    similarSlugs: ["fiat-panda", "renault-clio-automatic"],
   },
   {
     slug: "dacia-spring-electric",
@@ -64,31 +126,23 @@ export const fleet: Vehicle[] = [
     luggage: 1,
     ac: true,
     fuel: "Electric",
-    fromPerDay: 52,
-    image: carElectric,
-    tagline: "Silent city runs from Chora to Agios Prokopios.",
-    features: ["100% electric", "Automatic", "Charging map included", "Free port delivery"],
-  },
-  {
-    slug: "citroen-c3-manual",
-    name: "Citroen C3",
-    category: "Family",
-    transmission: "Manual",
-    seats: 5,
-    doors: 5,
-    luggage: 2,
-    ac: true,
-    fuel: "Petrol",
-    engineCc: 1200,
-    fromPerDay: 54,
-    image: carCompact,
-    tagline: "The everyday family favourite — five doors, five seats.",
-    features: ["Full insurance", "CarPlay ready", "Unlimited mileage", "Free delivery"],
+    fromPerDay: 33,
+    sixDayTotal: 198,
+    image: "/fleet/dacia-spring-electric.png",
+    gallery: ["/fleet/dacia-spring-electric.png", "/fleet/dacia-spring-interior.png"],
+    tagline: "Silent, zero-emission runs from Chora to the beaches.",
+    vibes: ["100% electric", "Automatic", "Eco & quiet"],
+    idealFor:
+      "Ideal for eco-conscious couples and small families exploring town and the west-coast beaches.",
+    seoDescription:
+      "The Dacia Spring Electric Automatic offers smooth, quiet, eco-friendly driving, a perfect electric car rental in Naxos for couples and small families. Automatic transmission with easy airport or port pick-up.",
+    included: includedBase,
+    similarSlugs: ["peugeot-108", "renault-clio-automatic"],
   },
   {
     slug: "renault-clio-automatic",
     name: "Renault Clio Automatic",
-    category: "Compact",
+    category: "Medium",
     transmission: "Automatic",
     seats: 5,
     doors: 5,
@@ -96,13 +150,20 @@ export const fleet: Vehicle[] = [
     ac: true,
     fuel: "Petrol",
     engineCc: 1229,
-    fromPerDay: 60,
-    image: carCompact,
+    fromPerDay: 67,
+    sixDayTotal: 402,
+    image: "/fleet/renault-clio-automatic.jpg",
+    gallery: ["/fleet/renault-clio-automatic.jpg", "/fleet/renault-clio-interior.jpg"],
     tagline: "Automatic comfort with room for the whole beach kit.",
-    features: ["Automatic", "CarPlay", "Reverse sensors", "Full insurance"],
+    vibes: ["Automatic", "Comfortable", "Family-ready"],
+    idealFor: "Ideal for travellers who want relaxed automatic driving and a little extra space.",
+    seoDescription:
+      "The Renault Clio Automatic is a comfortable, fuel-efficient automatic car rental in Naxos, perfect for couples, families and friends who want easy driving and simple parking around the island.",
+    included: includedBase,
+    similarSlugs: ["citroen-c3", "peugeot-2008-suv"],
   },
   {
-    slug: "peugeot-2008-manual",
+    slug: "peugeot-2008-suv",
     name: "Peugeot 2008 SUV",
     category: "SUV",
     transmission: "Manual",
@@ -112,14 +173,22 @@ export const fleet: Vehicle[] = [
     ac: true,
     fuel: "Petrol",
     engineCc: 1200,
-    fromPerDay: 75,
-    image: carSuv,
-    tagline: "Elevated ride for the mountain villages of Apeiranthos and Chalki.",
-    features: ["High ground clearance", "5 seats", "Large boot", "Full insurance"],
+    fromPerDay: 65,
+    sixDayTotal: 390,
+    image: "/fleet/peugeot-2008-suv.png",
+    gallery: ["/fleet/peugeot-2008-suv.png", "/fleet/peugeot-2008-suv-interior.jpg"],
+    tagline: "Elevated ride for mountain villages and hidden coves.",
+    vibes: ["High driving position", "Big boot", "Adventure-ready"],
+    idealFor:
+      "Ideal for families and explorers heading to Apeiranthos, Chalki and the mountain roads.",
+    seoDescription:
+      "The Peugeot 2008 Manual is a modern, spacious SUV rental in Naxos, ideal for families and travellers who want comfort and reliability. Its elevated driving position and large luggage space are perfect for town, mountain villages and beaches.",
+    included: includedBase,
+    similarSlugs: ["citroen-c3-aircross-hybrid", "dacia-lodgy"],
   },
   {
     slug: "citroen-c3-aircross-hybrid",
-    name: "Citroen C3 Aircross Hybrid",
+    name: "Citroen C3 Aircross Hybrid Automatic",
     category: "Hybrid",
     transmission: "Automatic",
     seats: 5,
@@ -128,61 +197,122 @@ export const fleet: Vehicle[] = [
     ac: true,
     fuel: "Hybrid",
     engineCc: 1200,
-    fromPerDay: 98,
-    image: carSuv,
-    tagline: "Hybrid crossover: quiet, tall, and thrifty on fuel.",
-    features: ["Hybrid", "Automatic", "CarPlay", "Full insurance"],
+    fromPerDay: 89,
+    sixDayTotal: 534,
+    image: "/fleet/citroen-c3-aircross-hybrid.png",
+    gallery: ["/fleet/citroen-c3-aircross-hybrid.png"],
+    tagline: "Tall, quiet hybrid crossover that is thrifty on every road.",
+    vibes: ["Hybrid efficiency", "Automatic", "Roomy crossover"],
+    idealFor: "Ideal for families and groups wanting modern hybrid comfort and low fuel bills.",
+    seoDescription:
+      "The Citroen C3 Aircross Hybrid Automatic is a modern, comfortable crossover hybrid car rental in Naxos, perfect for couples, families or friends who want smooth, efficient driving and a spacious interior.",
+    included: includedBase,
+    similarSlugs: ["citroen-c4-hybrid", "peugeot-2008-suv"],
   },
   {
-    slug: "fiat-500l-open-roof",
-    name: "Fiat 500L Open Roof",
-    category: "Cabrio",
+    slug: "citroen-c4-hybrid",
+    name: "Citroen C4 Hybrid Automatic",
+    category: "Hybrid",
     transmission: "Automatic",
     seats: 5,
     doors: 5,
-    luggage: 2,
+    luggage: 3,
     ac: true,
-    fuel: "Petrol",
-    engineCc: 1399,
-    fromPerDay: 100,
-    image: carCabrio,
-    tagline: "Roll the roof back — the Aegean is right there.",
-    features: ["Open-roof panorama", "Automatic", "5 seats", "Full insurance"],
+    fuel: "Hybrid",
+    engineCc: 1200,
+    fromPerDay: 89,
+    sixDayTotal: 534,
+    image: "/fleet/citroen-c4-hybrid.png",
+    gallery: ["/fleet/citroen-c4-hybrid.png", "/fleet/citroen-c4-hybrid-interior.jpg"],
+    tagline: "The flagship hybrid crossover: smooth, modern, refined.",
+    vibes: ["Premium hybrid", "Automatic", "Most comfortable"],
+    idealFor: "Ideal for travellers who want the most comfortable, refined ride in the fleet.",
+    seoDescription:
+      "The Citroen C4 Hybrid Automatic is a modern, comfortable crossover with advanced hybrid technology, a relaxing, fuel-efficient car rental in Naxos for couples, families and groups exploring the island.",
+    included: includedBase,
+    similarSlugs: ["citroen-c3-aircross-hybrid", "peugeot-2008-suv"],
   },
   {
-    slug: "citroen-berlingo-7-seater",
-    name: "Citroen Berlingo 7-Seater",
-    category: "7-Seater",
-    transmission: "Automatic",
-    seats: 7,
+    slug: "dacia-lodgy",
+    name: "Dacia Lodgy",
+    category: "Family",
+    transmission: "Manual",
+    seats: 5,
     doors: 5,
-    luggage: 4,
+    luggage: 3,
     ac: true,
     fuel: "Diesel",
     engineCc: 1500,
-    fromPerDay: 145,
-    image: carMinivan,
-    tagline: "Seven seats for the whole family — and the luggage.",
-    features: ["7 seats", "Automatic", "Huge boot", "Full insurance"],
+    fromPerDay: 40,
+    sixDayTotal: 240,
+    image: "/fleet/dacia-lodgy.png",
+    gallery: ["/fleet/dacia-lodgy.png"],
+    tagline: "Spacious, thrifty diesel for families and luggage.",
+    vibes: ["Roomy", "Diesel-thrifty", "Luggage-friendly"],
+    idealFor: "Ideal for families and groups needing extra passenger and luggage space.",
+    seoDescription:
+      "The Dacia Lodgy Manual is a practical, comfortable family car rental in Naxos with a roomy interior and flexible seating, perfect for airport transfers, long island drives and beach days.",
+    included: includedBase,
+    similarSlugs: ["fiat-tipo-station-wagon", "opel-combo-tour"],
   },
   {
-    slug: "opel-combo-tour-7-seater",
+    slug: "fiat-tipo-station-wagon",
+    name: "Fiat Tipo Station Wagon",
+    category: "Family",
+    transmission: "Manual",
+    seats: 5,
+    doors: 5,
+    luggage: 3,
+    ac: true,
+    fuel: "Petrol",
+    engineCc: 1400,
+    fromPerDay: 40,
+    sixDayTotal: 240,
+    image: "/fleet/fiat-tipo-sw.png",
+    gallery: ["/fleet/fiat-tipo-sw.png"],
+    tagline: "Big boot, big comfort: the estate that swallows suitcases.",
+    vibes: ["Huge boot", "Long-drive comfort", "Great value"],
+    idealFor: "Ideal for families and groups who want maximum luggage space for a low daily rate.",
+    seoDescription:
+      "The Fiat Tipo Station Wagon is a practical, comfortable car hire in Naxos with a large boot and roomy interior, ideal for families and groups needing space for luggage and relaxed island driving.",
+    included: includedBase,
+    similarSlugs: ["dacia-lodgy", "opel-combo-tour"],
+  },
+  {
+    slug: "opel-combo-tour",
     name: "Opel Combo Tour 7-Seater",
     category: "7-Seater",
     transmission: "Manual",
     seats: 7,
     doors: 5,
-    luggage: 3,
+    luggage: 4,
     ac: true,
     fuel: "Diesel",
     engineCc: 1600,
-    fromPerDay: 115,
-    image: carMinivan,
-    tagline: "Group-friendly, wallet-friendly, island-tested.",
-    features: ["7 seats", "Manual", "Roomy interior", "Full insurance"],
+    fromPerDay: 65,
+    sixDayTotal: 390,
+    image: "/fleet/opel-combo.jpg",
+    gallery: ["/fleet/opel-combo.jpg"],
+    tagline: "Seven seats for the whole crew, and all the bags.",
+    vibes: ["7 seats", "Group-friendly", "Diesel-economical"],
+    idealFor: "Ideal for large families and groups of friends travelling together.",
+    seoDescription:
+      "The Opel Combo Tour is a spacious 7-seater car rental in Naxos, perfect for families and groups of friends. Seating for up to 7 passengers with comfortable island driving and free airport or port pick-up.",
+    included: includedBase,
+    similarSlugs: ["dacia-lodgy", "fiat-tipo-station-wagon"],
   },
 ];
 
 export function getVehicle(slug: string) {
   return fleet.find((v) => v.slug === slug);
 }
+
+export const categories: VehicleCategory[] = [
+  "Small",
+  "Medium",
+  "Family",
+  "SUV",
+  "Hybrid",
+  "Electric",
+  "7-Seater",
+];

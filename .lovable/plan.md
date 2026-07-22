@@ -1,4 +1,3 @@
-
 # Naxos Auto Rent — Master Plan
 
 A cinematic, editorial car rental platform for Naxos. Real booking engine, AI concierge, curated island guide, SEO blog, and 4 languages. Reference direction: naxos-car-rental.com's density and content depth, elevated with an out-of-this-world Aegean editorial aesthetic.
@@ -8,6 +7,7 @@ A cinematic, editorial car rental platform for Naxos. Real booking engine, AI co
 **Mood:** whitewashed Cycladic minimalism × cinematic travel magazine × precision Swiss grid. Feels like a printed island monograph, not a rent-a-car site.
 
 **Palette (semantic tokens in `src/styles.css`, oklch):**
+
 - `--background`: warm chalk white (near-paper)
 - `--foreground`: deep ink navy (Aegean night)
 - `--primary`: deep sea blue (booking CTAs)
@@ -50,6 +50,7 @@ Each shareable route gets its own `head()` (title, description, og:title, og:des
 ## 3. Booking Engine (Lovable Cloud)
 
 **Data model (Supabase):**
+
 - `vehicles` — slug, name, category, transmission, seats, doors, luggage, ac, fuel, mpg, deposit, min_age, images[], features[], daily_rate_tiers (JSON: low/mid/high season), active
 - `bookings` — id, vehicle_id, user_id (nullable for guest), pickup_date, return_date, pickup_location, dropoff_location, extras[], driver_info (JSON), total, status (pending/confirmed/cancelled), payment_status, created_at
 - `extras` — id, name, description, price_per_day, price_flat
@@ -66,6 +67,7 @@ Each shareable route gets its own `head()` (title, description, og:title, og:des
 **Availability logic:** `createServerFn` checks overlap between requested range and existing confirmed bookings + blocked_dates for the vehicle. Server computes total from season tiers + extras — never trusts client price.
 
 **Booking flow (4 steps, sticky progress):**
+
 1. Dates + locations (persisted in URL search params)
 2. Available vehicles grid (filtered by availability)
 3. Extras (child seat, GPS, additional driver, full insurance)
@@ -101,6 +103,7 @@ Standard MDX-style blog (markdown in DB). Admin CMS at `/_authenticated/admin/bl
 ## 8. Admin Dashboard (`/_authenticated/admin`)
 
 Role-gated via `has_role(uid, 'admin')`. Sections:
+
 - Bookings (list, filter, confirm/cancel, export CSV)
 - Fleet (CRUD vehicles, upload images, set season tiers)
 - Availability calendar (block dates)

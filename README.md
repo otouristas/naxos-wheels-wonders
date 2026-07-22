@@ -1,29 +1,40 @@
-# Welcome to your Lovable project
+# Naxos Auto Rent
 
-This project was built with [Lovable](https://lovable.dev).
-
-## Build with Lovable
-
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+Editorial car rental website for Naxos Island. Next.js App Router on Vercel.
 
 ## Development
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
-
 ```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
+bun install   # or: npm install
+bun run dev   # or: npm run dev
 ```
 
-## Built with
+Open [http://localhost:3000](http://localhost:3000).
 
-- TanStack Start
+## Scripts
+
+| Command  | Description                |
+| -------- | -------------------------- |
+| `dev`    | Next.js development server |
+| `build`  | Production build           |
+| `start`  | Serve production build     |
+| `lint`   | ESLint                     |
+| `format` | Prettier                   |
+
+## Stack
+
+- Next.js (App Router)
+- React 19
 - TypeScript
-- React
-- Tailwind CSS
+- Tailwind CSS v4
+- shadcn/ui
+- Framer Motion
+- Vercel
+
+## Deploy
+
+Connect the repo to [Vercel](https://vercel.com) (framework preset: Next.js) or run:
+
+```sh
+npx vercel
+```

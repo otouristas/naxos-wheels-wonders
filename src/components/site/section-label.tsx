@@ -1,9 +1,29 @@
-export function SectionLabel({ index, children }: { index: string; children: React.ReactNode }) {
+import { cn } from "@/lib/utils";
+
+export function SectionLabel({
+  children,
+  className,
+  tone = "yellow",
+}: {
+  children: React.ReactNode;
+  className?: string;
+  tone?: "yellow" | "blue" | "sea";
+}) {
+  const tones = {
+    yellow: "bg-accent text-accent-foreground",
+    blue: "bg-primary/10 text-primary",
+    sea: "bg-sea/15 text-primary",
+  };
+
   return (
-    <div className="flex items-center gap-4 text-xs uppercase tracking-[0.28em] text-muted-foreground">
-      <span className="text-accent">{index}</span>
-      <span className="h-px flex-1 bg-border md:flex-none md:w-16" />
-      <span>{children}</span>
-    </div>
+    <span
+      className={cn(
+        "inline-flex items-center rounded-full px-3.5 py-1 text-[11px] font-bold uppercase tracking-[0.14em]",
+        tones[tone],
+        className,
+      )}
+    >
+      {children}
+    </span>
   );
 }

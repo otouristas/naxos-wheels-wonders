@@ -1,0 +1,41 @@
+# Naxos Auto Rent
+
+> Naxos Auto Rent is a local, family-run car rental company based in Galanado, Naxos (Cyclades, Greece), serving travellers since 1998. We offer transparent all-inclusive pricing, free delivery and collection at Naxos Airport, Naxos Port and accommodations, unlimited mileage, a free additional driver and 24/7 road assistance. Rated 5.0 from 381+ Google reviews.
+
+## Key facts
+- Location: Galanado Village, 84300 Naxos, Greece
+- Phone: +30 693 099 3670 / +30 697 443 0785
+- Email: info@naxosautorent.com
+- Rating: 5.0 (381+ Google reviews)
+- Every rental includes: all taxes and VAT, third-party insurance, unlimited mileage, free additional driver, free airport, port and hotel delivery, 24/7 road assistance, theft protection.
+- Languages: English, Greek, Italian, French, German, Dutch.
+- Booking: online booking engine at https://naxos-car-rental.com/book or by phone and WhatsApp.
+
+## Fleet
+- Peugeot 108 (Small, manual, petrol) from 30 EUR/day. Cheapest to run, easy town parking.
+- Dacia Spring Electric (Electric, automatic) from 33 EUR/day. Silent, zero-emission town and beach trips.
+- Fiat Panda (Medium, manual, petrol) from 35 EUR/day. The island classic runabout.
+- Citroen C3 (Family, manual, petrol) from 38 EUR/day. Stylish and comfortable.
+- Dacia Lodgy (Family, manual, diesel) from 40 EUR/day. Roomy and thrifty.
+- Fiat Tipo Station Wagon (Family, manual, petrol) from 40 EUR/day. Huge boot.
+- Peugeot 2008 SUV (SUV, manual, petrol) from 65 EUR/day. Elevated ride for mountain villages.
+- Opel Combo Tour (7-Seater, manual, diesel) from 65 EUR/day. Seven seats for groups.
+- Renault Clio Automatic (Medium, automatic, petrol) from 67 EUR/day. Relaxed automatic comfort.
+- Citroen C3 Aircross Hybrid Automatic (Hybrid, automatic) from 89 EUR/day. Efficient crossover.
+- Citroen C4 Hybrid Automatic (Hybrid, automatic) from 89 EUR/day. The most comfortable in the fleet.
+
+## Touristas AI
+The website features "Touristas AI", an AI-powered car finder that recommends the best vehicle from the fleet based on group size, budget, trip type and gearbox preference.
+
+## Pages
+- Home: https://naxos-car-rental.com/
+- Fleet: https://naxos-car-rental.com/fleet
+- Naxos Guide (beaches, villages, how to get here, road trips, driving tips): https://naxos-car-rental.com/guide
+- Blog: https://naxos-car-rental.com/blog
+- Reviews: https://naxos-car-rental.com/reviews
+- About: https://naxos-car-rental.com/about
+- FAQ: https://naxos-car-rental.com/faq
+- Contact: https://naxos-car-rental.com/contact
+
+## Detailed content
+For a full, page-by-page outline see https://naxos-car-rental.com/llms-full.txt

@@ -1,0 +1,427 @@
+{
+  "nav": {
+    "fleet": "Ons wagenpark",
+    "guide": "Naxos-gids",
+    "guideHub": "Alle gidsen",
+    "guideHowToGet": "Hoe kom je op Naxos",
+    "guideBeaches": "Strandengids",
+    "guideVillages": "Dorpen",
+    "guideRoadTrip": "Roadtrip-route",
+    "guideDriving": "Rijden op Naxos",
+    "blog": "Blog",
+    "about": "Over ons",
+    "faq": "FAQ",
+    "reviews": "Beoordelingen",
+    "contact": "Contact",
+    "book": "Online boeken",
+    "openMenu": "Menu openen",
+    "closeMenu": "Menu sluiten",
+    "language": "Taal",
+    "askTouristas": "Vraag Touristas AI"
+  },
+  "indicators": {
+    "rating": "Beoordeling 5.0 · {count} Google-reviews",
+    "airport": "Gratis levering op de luchthaven",
+    "port": "Gratis levering in de haven",
+    "cancellation": "Gratis annuleren",
+    "mileage": "Onbeperkt aantal kilometers",
+    "driver": "Gratis extra bestuurder",
+    "local": "Lokaal familiebedrijf sinds 1998"
+  },
+  "cta": {
+    "bookOnline": "Online boeken",
+    "bookNow": "Boek nu",
+    "checkPrices": "Prijzen & beschikbaarheid bekijken",
+    "call": "Bel ons",
+    "whatsapp": "WhatsApp",
+    "viewFleet": "Ontdek het wagenpark",
+    "viewCar": "Details",
+    "reserve": "Reserveer deze auto",
+    "findCar": "Vind uw ideale auto",
+    "readMore": "Lees meer",
+    "seeAll": "Alles bekijken",
+    "backToFleet": "Terug naar het wagenpark",
+    "explore": "Ontdek Naxos",
+    "askAi": "Vraag het Touristas AI"
+  },
+  "hero": {
+    "eyebrow": "Naxos · Cycladen · Griekenland",
+    "titleLead": "Het eiland,",
+    "titleEmphasis": "op uw voorwaarden.",
+    "subtitle": "Huur een auto op Naxos bij het meest geliefde lokale team van het eiland. Gratis levering op de luchthaven en in de haven, transparante prijzen en een wagenpark dat het hele jaar klaar is voor het eiland.",
+    "ratingLabel": "Beoordeling {rating} uit {count} reviews",
+    "stat1Value": "27 jaar",
+    "stat1Label": "Op het eiland",
+    "stat2Value": "Gratis",
+    "stat2Label": "Levering luchthaven & haven",
+    "stat3Value": "24/7",
+    "stat3Label": "Pechhulp",
+    "stat4Value": "0€",
+    "stat4Label": "Verborgen kosten"
+  },
+  "booking": {
+    "title": "Reserveer uw auto",
+    "subtitle": "Gratis annuleren · Beste prijs gegarandeerd",
+    "pageEyebrow": "Realtime beschikbaarheid",
+    "pageTitle": "Boek een huurauto op Naxos",
+    "pageSubtitle": "Bekijk realtime prijzen en beschikbaarheid en reserveer in een paar stappen.",
+    "resultsEyebrow": "Uw reis",
+    "resultsTitle": "Beschikbare auto's",
+    "editSearch": "Data wijzigen",
+    "engineError": "Live beschikbaarheid kon nu niet worden geladen.",
+    "pickupLocation": "Ophaallocatie",
+    "dropoffLocation": "Inleverlocatie",
+    "pickupDate": "Ophaaldatum",
+    "dropoffDate": "Inleverdatum",
+    "sameLocation": "Zelfde als ophalen",
+    "search": "Beschikbare auto's zoeken",
+    "locations": {
+      "airport": "Luchthaven Naxos (JNX)",
+      "port": "Haven Naxos",
+      "accommodationNear": "Uw accommodatie, tot 10 km van de haven",
+      "accommodationFar": "Uw accommodatie, meer dan 10 km van de haven"
+    },
+    "badge": "Beste tarieven",
+    "pickupGroup": "Ophalen",
+    "dropoffGroup": "Inleveren",
+    "pickupTime": "Ophaaltijd",
+    "dropoffTime": "Inlevertijd",
+    "hour": "Uur",
+    "minute": "Minuut",
+    "filters": "Filters",
+    "reco": {
+      "title": "Aanbevolen voor jouw data",
+      "subtitle": "Geselecteerd uit de auto's die beschikbaar zijn voor jouw reis.",
+      "angles": {
+        "bestValue": "Beste prijs-kwaliteit",
+        "popular": "Populairst",
+        "family": "Ideaal voor gezinnen",
+        "eco": "Groene keuze"
+      },
+      "save": "Bespaar {pct}%",
+      "perDayApprox": "≈ €{price}/dag",
+      "included": "Verzekering & onbeperkte km inbegrepen",
+      "book": "Boek deze auto",
+      "details": "Bekijk details",
+      "urgency": "Auto's voor deze data zijn snel weg, reserveer vandaag."
+    }
+  },
+  "home": {
+    "whyTitle": "Waarom reizigers voor ons kiezen",
+    "whySubtitle": "Huur met vertrouwen, transparante prijzen en topservice van een lokale familie die elke weg op Naxos kent.",
+    "why": {
+      "priceTitle": "Beste tarieven, geen verrassingen",
+      "priceBody": "Transparante prijzen met alle belastingen, verzekering en onbeperkte kilometers inbegrepen. Wat u ziet, betaalt u.",
+      "deliveryTitle": "Gratis levering, overal",
+      "deliveryBody": "We ontmoeten u op de luchthaven, in de haven of bij uw hotel, en halen de auto op waar het u uitkomt.",
+      "fleetTitle": "Een wagenpark klaar voor het eiland",
+      "fleetBody": "Van zuinige stadsauto's tot hybrides, SUV's en 7-zitters, elke auto is onderhouden en klaar voor de wegen van Naxos.",
+      "localTitle": "Echte lokale kennis",
+      "localBody": "Jaren op het eiland betekenen insidertips over stranden, dorpen en de mooiste routes."
+    },
+    "fleetTitle": "Kies uw auto",
+    "fleetSubtitle": "Een auto voor elke soort Naxos-trip, van stille elektrische stadsritten tot familie-avonturen met zeven zitplaatsen.",
+    "aiTitle": "Niet zeker welke auto?",
+    "aiSubtitle": "Beantwoord een paar korte vragen en laat Touristas AI de perfecte auto voor uw reis vinden.",
+    "aiPoweredBy": "mogelijk gemaakt door Touristas AI",
+    "guideTitle": "Ontdek Naxos, gratis lokale gidsen",
+    "guideSubtitle": "Stranden, dorpen, roadtrips en rijtips, alles om de perfecte eilandweek te plannen.",
+    "reviewsTitle": "Geliefd bij reizigers",
+    "reviewsSubtitle": "Beoordeeld met {rating} van de 5 op basis van {count} geverifieerde Google-reviews.",
+    "locationsTitle": "Gratis ophalen & inleveren",
+    "locationsSubtitle": "We leveren en halen uw auto op al deze locaties op, zonder extra kosten.",
+    "blogTitle": "Uit het dagboek",
+    "blogSubtitle": "Verhalen, routes en praktische tips voor uw reis naar Naxos.",
+    "ctaTitle": "Uw Naxos-avontuur begint hier",
+    "ctaSubtitle": "Boek online in een paar minuten, of stuur ons een bericht en wij regelen alles.",
+    "trust": {
+      "taxes": "Alle belastingen & btw inbegrepen",
+      "insurance": "Verzekering inbegrepen",
+      "mileage": "Onbeperkt aantal kilometers",
+      "support": "24/7 ondersteuning"
+    }
+  },
+  "fleet": {
+    "eyebrow": "Het Wagenpark",
+    "title": "Elke auto, klaar voor het eiland.",
+    "subtitle": "Volledig verzekerd, onbeperkte kilometers, gratis levering. Filter op categorie of laat Touristas AI voor u kiezen.",
+    "all": "Alle auto's",
+    "from": "vanaf",
+    "perDay": "/ dag",
+    "categories": {
+      "Small": "Klein",
+      "Medium": "Middel",
+      "Family": "Familie",
+      "SUV": "SUV",
+      "Hybrid": "Hybride",
+      "Electric": "Elektrisch",
+      "7-Seater": "7-zitter"
+    },
+    "specs": {
+      "transmission": "Versnellingsbak",
+      "seats": "Zitplaatsen",
+      "doors": "Deuren",
+      "luggage": "Bagage",
+      "fuel": "Brandstof",
+      "engine": "Motor",
+      "ac": "Airconditioning",
+      "manual": "Handgeschakeld",
+      "automatic": "Automaat",
+      "petrol": "Benzine",
+      "diesel": "Diesel",
+      "hybrid": "Hybride",
+      "electric": "Elektrisch",
+      "yes": "Ja"
+    },
+    "idealForLabel": "Ideaal voor",
+    "includedLabel": "Elke verhuur omvat",
+    "similarLabel": "Vergelijkbare auto's",
+    "detailIntro": "Over deze auto",
+    "priceNote": "Prijs inclusief alle belastingen. Gratis annuleren.",
+    "sixDayNote": "bijv. {price}€ voor 6 dagen",
+    "googleRated": "Beoordeling {rating} · {count} Google-reviews"
+  },
+  "ai": {
+    "title": "Vind uw ideale auto",
+    "poweredBy": "mogelijk gemaakt door Touristas AI",
+    "intro": "Vertel me over uw reis en ik beveel de beste auto's uit het wagenpark van Naxos Auto Rent aan.",
+    "placeholder": "bijv. 2 volwassenen + 2 kinderen, een week in augustus, wat bergdorpen en een klein budget",
+    "send": "Geef mij een aanbeveling",
+    "thinking": "Auto's zoeken…",
+    "reset": "Opnieuw beginnen",
+    "disclaimer": "Aanbevelingen worden door AI gegenereerd om u te helpen kiezen. Prijzen en beschikbaarheid worden bij het boeken bevestigd.",
+    "matches": "Uw ideale matches",
+    "whyMatch": "Waarom deze auto",
+    "quiz": {
+      "group": "Hoeveel reizigers?",
+      "budget": "Wat is uw budget?",
+      "vibe": "Wat voor soort reis?",
+      "transmission": "Voorkeur versnellingsbak?",
+      "groupOptions": {
+        "solo": "1–2 personen",
+        "family": "3–4 personen",
+        "group": "5–7 personen"
+      },
+      "budgetOptions": {
+        "low": "Laagste prijs",
+        "mid": "Gebalanceerd",
+        "high": "Maximaal comfort"
+      },
+      "vibeOptions": {
+        "city": "Stad & stranden",
+        "explore": "Bergdorpen",
+        "family": "Familie & bagage",
+        "eco": "Eco / elektrisch"
+      },
+      "transmissionOptions": {
+        "any": "Maakt niet uit",
+        "manual": "Handgeschakeld",
+        "automatic": "Automaat"
+      }
+    }
+  },
+  "guide": {
+    "eyebrow": "Naxos-gids",
+    "title": "Ontdek Naxos, op uw manier.",
+    "subtitle": "Gratis, eerlijke lokale gidsen over de stranden, dorpen, wegen en roadtrips van Naxos, geschreven door het team dat ze elke dag rijdt.",
+    "readGuide": "Lees de gids",
+    "relatedCar": "Aanbevolen auto voor deze reis",
+    "backToGuide": "Terug naar de gids",
+    "inThisGuide": "In deze gids",
+    "minRead": "{min} min lezen",
+    "faqTitle": "Veelgestelde vragen",
+    "relatedGuides": "Gerelateerde gidsen",
+    "relatedReading": "Meer uit het dagboek",
+    "ctaTitle": "Klaar om Naxos te ontdekken?",
+    "ctaSubtitle": "Boek uw auto in een paar minuten. Gratis levering, onbeperkte kilometers, geen verborgen kosten.",
+    "discoverLead": "Blijf ontdekken met onze partner Discover Cyclades: veerboten, hotels, activiteiten en een AI-tripplanner voor Naxos."
+  },
+  "blog": {
+    "eyebrow": "Het Dagboek",
+    "title": "Naxos-verhalen & reistips.",
+    "subtitle": "Routes, lokale geheimen en praktische adviezen om het meeste uit uw eilandreis te halen.",
+    "readArticle": "Lees het artikel",
+    "backToBlog": "Terug naar het dagboek",
+    "published": "Gepubliceerd",
+    "relatedCars": "Auto's voor deze reis",
+    "faqTitle": "Veelgestelde vragen",
+    "relatedGuides": "Gerelateerde gidsen",
+    "relatedReading": "Verder lezen"
+  },
+  "about": {
+    "eyebrow": "Over ons",
+    "title": "Een lokale familie, tot uw dienst sinds 1998.",
+    "body1": "Naxos Auto Rent is een familiebedrijf voor autoverhuur, gevestigd in Galanado, in het hart van Naxos. Al meer dan twee decennia helpen we reizigers van over de hele wereld het eiland te ontdekken zoals het bedoeld is, vrij en op hun eigen tempo.",
+    "body2": "Wij zijn geen gezichtsloze internationale keten. Wanneer u bij ons huurt, wordt u geholpen door echte locals die elk strand, elk dorp en elke weg op Naxos kennen, en die uw reis oprecht onvergetelijk willen maken.",
+    "body3": "Daarom komen zoveel van onze gasten terug en sturen ze hun vrienden. Huur lokaal, steun een echte Naxiotische familie en reis met mensen die u als een buur behandelen.",
+    "stat1Value": "1998",
+    "stat1Label": "In dienst van het eiland",
+    "stat2Value": "5.0★",
+    "stat2Label": "Uit {count} reviews",
+    "stat3Value": "12.000+",
+    "stat3Label": "Tevreden reizigers",
+    "stat4Value": "100%",
+    "stat4Label": "Lokaal & onafhankelijk"
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Praat altijd met een local.",
+    "subtitle": "Vragen, een speciaal verzoek of hulp bij het plannen van uw reis? We reageren snel, meestal binnen een uur.",
+    "phone": "Telefoon",
+    "email": "E-mail",
+    "office": "Kantoor",
+    "hours": "24/7 telefonisch bereikbaar",
+    "whatsappCta": "Chat op WhatsApp",
+    "callCta": "Bel nu",
+    "getDirections": "Routebeschrijving",
+    "mapTitle": "Onze locaties",
+    "mapSubtitle": "Gratis ophalen & inleveren op alle vier, kantoor, haven, luchthaven en Naxos Town.",
+    "maps": {
+      "office": "Kantoor · Galanado",
+      "port": "Haven Naxos",
+      "airport": "Luchthaven Naxos (JNX)",
+      "town": "Naxos Town"
+    },
+    "formName": "Uw naam",
+    "formEmail": "Uw e-mail",
+    "formMessage": "Hoe kunnen we helpen?",
+    "formSubmit": "Bericht versturen",
+    "formNote": "Liever nu praten? Bel of app ons op WhatsApp voor het snelste antwoord."
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "title": "Alles wat u moet weten.",
+    "subtitle": "Uw antwoord niet gevonden? Bel of app ons op elk moment op WhatsApp, we zijn er 24/7.",
+    "items": {
+      "insured": {
+        "q": "Zijn de voertuigen verzekerd?",
+        "a": "Ja. Alle voertuigen van Naxos Auto Rent zijn verzekerd tegen aansprakelijkheid tegenover derden (TPI). U kunt tegen een kleine dagelijkse toeslag een eigen-risicoverzekering (CDW) toevoegen voor extra gemoedsrust."
+      },
+      "accident": {
+        "q": "Wat als ik een ongeluk heb of de auto beschadigd is?",
+        "a": "Zorg eerst dat u veilig bent, weg van het verkeer. Bel daarna het 24-uursnummer op uw huurcontract en wij begeleiden u door het hele proces. Bel bij letsel altijd de Griekse politie."
+      },
+      "pickup": {
+        "q": "Waar kan ik de auto ophalen en inleveren?",
+        "a": "U kunt ophalen bij de haven of luchthaven van Naxos, of wij bezorgen de auto bij uw accommodatie. De auto wordt op een afgesproken locatie ingeleverd, levering en ophalen zijn altijd gratis."
+      },
+      "breakdown": {
+        "q": "Wat als de auto pech heeft?",
+        "a": "Onze voertuigen worden zorgvuldig onderhouden om mechanische problemen te voorkomen. Mocht u toch pech krijgen, dan bieden wij 24-uurs pechhulp en een directe vervanging zodat u uw reis kunt voortzetten."
+      },
+      "payment": {
+        "q": "Hoe kan ik betalen?",
+        "a": "U kunt betalen met contant geld, PayPal, bankoverschrijving of creditcard."
+      },
+      "howToRent": {
+        "q": "Hoe huur ik een auto?",
+        "a": "Huur in 3 stappen via ons online boekingssysteem, het contactformulier of door te bellen naar +30 693 099 3670. Als u online boekt, nemen we contact met u op om te bevestigen."
+      },
+      "contactTime": {
+        "q": "Wanneer kan ik contact opnemen?",
+        "a": "U kunt ons 24/7 telefonisch bereiken op +30 693 099 3670 of +30 697 443 0785."
+      },
+      "fines": {
+        "q": "Wie is verantwoordelijk voor parkeerboetes of overtredingen?",
+        "a": "U bent verantwoordelijk voor eventuele parkeerboetes of verkeersovertredingen tijdens de huurperiode."
+      }
+    }
+  },
+  "reviews": {
+    "eyebrow": "Beoordelingen",
+    "title": "Wat onze reizigers zeggen.",
+    "subtitle": "Beoordeeld met {rating} van de 5 op basis van {count} geverifieerde Google-reviews.",
+    "writeReview": "Schrijf een review",
+    "verified": "Geverifieerde Google-review",
+    "showing": "{shown} recente Google-reviews van ons live profiel.",
+    "googleCount": "{count} Google-reviews",
+    "viewOnGoogle": "Bekijk op Google"
+  },
+  "footer": {
+    "tagline": "Naxos Rent A Car by Auto Rent, beste tarieven, gratis levering. Lokaal familiebedrijf, tot uw dienst sinds 1998.",
+    "explore": "Ontdek",
+    "company": "Bedrijf",
+    "contact": "Contact",
+    "quickFind": "Snel vinden",
+    "terms": "Algemene voorwaarden",
+    "privacy": "Privacybeleid",
+    "perks": {
+      "title": "Elke verhuur omvat",
+      "mileage": "Gratis onbeperkte kilometers",
+      "airport": "Gratis levering op de luchthaven",
+      "port": "Gratis levering in de haven",
+      "driver": "Gratis extra bestuurder"
+    },
+    "rights": "Alle rechten voorbehouden.",
+    "registration": "ΜΗ.Τ.Ε {mhte} · Γ.Ε.ΜΗ {gemi}",
+    "guide": "Naxos-gids",
+    "discover": "Discover Cyclades",
+    "dcHowToGet": "Hoe er te komen",
+    "dcFerries": "Veerboten naar Naxos",
+    "dcThings": "Wat te doen",
+    "dcGuide": "Naxos eilandgids",
+    "dcHotels": "Hotels op Naxos",
+    "touristas": "Touristas AI tripplanner",
+    "dcPartner": "Partner",
+    "designedBy": "Ontworpen door",
+    "poweredBy": "Powered by"
+  },
+  "legal": {
+    "termsTitle": "Algemene voorwaarden",
+    "privacyTitle": "Privacybeleid",
+    "lastUpdated": "Laatst bijgewerkt"
+  },
+  "notFound": {
+    "title": "Deze weg leidt nergens heen.",
+    "subtitle": "De pagina die u zoekt is hier niet, maar het eiland wacht nog steeds.",
+    "home": "Terug naar home",
+    "fleet": "Bekijk het wagenpark"
+  },
+  "error": {
+    "title": "Er is iets van de weg geraakt.",
+    "subtitle": "Er is een onverwachte fout opgetreden. Probeer het opnieuw.",
+    "retry": "Opnieuw proberen",
+    "home": "Naar home"
+  },
+  "chat": {
+    "title": "Touristas AI",
+    "subtitle": "Uw Naxos Auto Rent concierge",
+    "statusLive": "Online",
+    "greeting": "Hoi! Ik help je de juiste auto voor Naxos te kiezen. Vertel me over je reis.",
+    "placeholder": "Vraag over auto's, stranden, levering…",
+    "placeholderDates": "Wanneer heb je de auto nodig?",
+    "placeholderName": "Wat is je naam?",
+    "placeholderEmail": "Je e-mail?",
+    "placeholderPhone": "Telefoon / WhatsApp?",
+    "send": "Verstuur",
+    "clear": "Wissen",
+    "close": "Sluiten",
+    "open": "Touristas AI openen",
+    "expand": "Vergroten",
+    "collapse": "Verkleinen",
+    "unavailable": "Kon nu niet antwoorden. Probeer opnieuw of WhatsApp ons.",
+    "poweredBy": "Powered by",
+    "poweredBrand": "Touristas AI",
+    "disclaimer": "Suggesties zijn indicatief, bevestig beschikbaarheid bij boeking.",
+    "suggestBook": "Help me een auto te boeken",
+    "suggestFamily": "Auto voor gezin van 4",
+    "suggestFleet": "Toon me het wagenpark",
+    "suggestBeaches": "Beste auto voor strandhoppen",
+    "tipAsk": "Vraag me alles over Naxos-auto's",
+    "tipBook": "Ik help je boeken",
+    "tipFamily": "Gezinsauto nodig?",
+    "tipEco": "Probeer elektrisch & hybride",
+    "tipFerry": "Gratis levering bij haven & luchthaven",
+    "tipBeaches": "Stranden? Laten we de juiste auto vinden",
+    "fromDayShort": "vanaf €{price}/dag",
+    "askRate": "Vraag een tarief",
+    "seatsShort": "{count} zitplaatsen",
+    "toolBook": "Boeken",
+    "toolWhatsApp": "WhatsApp",
+    "toolView": "Bekijk",
+    "toolRecommend": "Aanbevolen voor jou",
+    "toolPrefill": "Boeking voortzetten",
+    "toolGuide": "Gerelateerde gidsen",
+    "toolRate": "Ongeveer €{price}/dag"
+  }
+}

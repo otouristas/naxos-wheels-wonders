@@ -1,0 +1,51 @@
+# Naxos Auto Rent, full site outline
+
+> Naxos Auto Rent is a local, family-run car rental company in Galanado, Naxos (Cyclades, Greece), renting cars since 1998. Prices are all-inclusive: taxes and VAT, third-party insurance, theft protection, unlimited mileage, a free additional driver, free delivery and collection at Naxos Airport, Naxos Port and any accommodation, plus 24/7 road assistance. Rated 5.0 from 381+ Google reviews. The site is available in English, Greek, Italian, French, German and Dutch, with an AI car finder called Touristas AI.
+
+## Contact and company
+- Name: Naxos Auto Rent
+- Office: Galanado Village, 84300 Naxos, Greece
+- Phone: +30 693 099 3670 and +30 697 443 0785
+- Email: info@naxosautorent.com
+- MHTE: 1174Ε81001132001, GEMI: 175531838000
+- Booking engine: https://naxos-car-rental.com/book
+- Free pick-up and drop-off points: office (Galanado), Naxos Port, Naxos National Airport (JNX), Naxos Town.
+
+## What every rental includes
+All taxes and VAT, third-party insurance, theft protection, unlimited mileage, free additional driver, free delivery and collection at airport, port and hotels, 24/7 road assistance.
+
+## Fleet (per-day from prices, all-inclusive)
+- Peugeot 108, Small, manual, petrol, 4 seats, from 30 EUR/day. City-nimble, cheapest to run, best for couples. https://naxos-car-rental.com/fleet/peugeot-108
+- Dacia Spring Electric, Electric, automatic, 4 seats, from 33 EUR/day. Silent zero-emission town and beach car. https://naxos-car-rental.com/fleet/dacia-spring-electric
+- Fiat Panda, Medium, manual, petrol, 5 seats, from 35 EUR/day. The island classic runabout. https://naxos-car-rental.com/fleet/fiat-panda
+- Citroen C3, Family, manual, petrol, 5 seats, from 38 EUR/day. Stylish and comfortable compact. https://naxos-car-rental.com/fleet/citroen-c3
+- Dacia Lodgy, Family, manual, diesel, 5 seats, from 40 EUR/day. Roomy, thrifty, luggage-friendly. https://naxos-car-rental.com/fleet/dacia-lodgy
+- Fiat Tipo Station Wagon, Family, manual, petrol, 5 seats, from 40 EUR/day. Huge boot for long drives. https://naxos-car-rental.com/fleet/fiat-tipo-station-wagon
+- Peugeot 2008 SUV, SUV, manual, petrol, 5 seats, from 65 EUR/day. Elevated ride for mountain villages. https://naxos-car-rental.com/fleet/peugeot-2008-suv
+- Opel Combo Tour, 7-Seater, manual, diesel, 7 seats, from 65 EUR/day. Seven seats for groups. https://naxos-car-rental.com/fleet/opel-combo-tour
+- Renault Clio Automatic, Medium, automatic, petrol, 5 seats, from 67 EUR/day. Relaxed automatic comfort. https://naxos-car-rental.com/fleet/renault-clio-automatic
+- Citroen C3 Aircross Hybrid Automatic, Hybrid, automatic, 5 seats, from 89 EUR/day. Efficient roomy crossover. https://naxos-car-rental.com/fleet/citroen-c3-aircross-hybrid
+- Citroen C4 Hybrid Automatic, Hybrid, automatic, 5 seats, from 89 EUR/day. The most comfortable in the fleet. https://naxos-car-rental.com/fleet/citroen-c4-hybrid
+
+## Touristas AI car finder
+An AI assistant on the site recommends the best vehicle from the fleet based on group size, budget, trip type (town and beach, mountain villages, long road trip), and gearbox preference. It returns a short explanation plus specific fleet picks with prices and reasons.
+
+## Naxos Guide (https://naxos-car-rental.com/guide)
+- Naxos Beaches Guide: every beach and how to reach it by car, from Agios Prokopios, Agia Anna and Plaka on the organised southwest strip to the wild south (Mikri Vigla, Kastraki, Alyko) and the remote east coast (Moutsouna, Psili Ammos). https://naxos-car-rental.com/guide/naxos-beaches-guide
+- How to Get to Naxos: ferries from Athens (Piraeus), domestic flights to Naxos airport (JNX), connections from Santorini, Mykonos and Paros, and free meet-and-greet delivery at port and airport. https://naxos-car-rental.com/guide/how-to-get-to-naxos
+- Naxos Villages: a drive through the mountain heart of the island, Halki and the Tragaea valley, the marble village of Apeiranthos, Filoti and Mount Zas, Koronos and Apollonas. https://naxos-car-rental.com/guide/naxos-villages
+- Naxos Itinerary by Car: ready-made 3, 5 and 7 day road trips covering beaches, villages, sunsets and tavernas. https://naxos-car-rental.com/guide/naxos-road-trip-itinerary
+- Driving in Naxos: practical advice on roads, fuel, parking and which car suits which trip. https://naxos-car-rental.com/guide/driving-in-naxos
+
+## Blog (https://naxos-car-rental.com/blog)
+- The Best Time to Visit Naxos (and Rent a Car): month-by-month weather, crowds, prices and the sweet spots for a road trip. https://naxos-car-rental.com/blog/best-time-to-visit-naxos
+- A Family Holiday in Naxos, by Car: why Naxos is the most family-friendly Cyclades island and how to do it stress-free. https://naxos-car-rental.com/blog/family-holiday-naxos-by-car
+- Renting an Electric Car in Naxos: charging, range and whether an EV suits your trip. https://naxos-car-rental.com/blog/electric-car-rental-naxos
+
+## Other pages
+- About: https://naxos-car-rental.com/about
+- Reviews: https://naxos-car-rental.com/reviews
+- FAQ: https://naxos-car-rental.com/faq
+- Contact and free delivery map: https://naxos-car-rental.com/contact
+- Terms: https://naxos-car-rental.com/terms
+- Privacy: https://naxos-car-rental.com/privacy
