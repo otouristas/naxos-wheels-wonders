@@ -182,6 +182,11 @@
     "googleRated": "Beoordeling {rating} · {count} Google-reviews"
   },
   "ai": {
+    "available": "Beschikbaar voor uw datums",
+    "save": "Bespaar {pct}%",
+    "trip": {
+      "heading": "Voeg datums toe voor live prijzen (optioneel)"
+    },
     "title": "Vind uw ideale auto",
     "poweredBy": "mogelijk gemaakt door Touristas AI",
     "intro": "Vertel me over uw reis en ik beveel de beste auto's uit het wagenpark van Naxos Auto Rent aan.",
@@ -384,6 +389,9 @@
     "home": "Naar home"
   },
   "chat": {
+    "available": "Beschikbaar voor uw datums",
+    "save": "Bespaar {pct}%",
+    "askDates": "Geef uw ophaal- en inleverdatum door voor live prijzen en beschikbaarheid.",
     "title": "Touristas AI",
     "subtitle": "Uw Naxos Auto Rent concierge",
     "statusLive": "Online",

@@ -182,6 +182,11 @@
     "googleRated": "Valutazione {rating} · {count} recensioni Google"
   },
   "ai": {
+    "available": "Disponibile per le tue date",
+    "save": "Risparmia {pct}%",
+    "trip": {
+      "heading": "Aggiungi le date per prezzi in tempo reale (facoltativo)"
+    },
     "title": "Trova l'auto perfetta",
     "poweredBy": "con la tecnologia di Touristas AI",
     "intro": "Raccontami del tuo viaggio e ti consiglierò le migliori auto della flotta Naxos Auto Rent.",
@@ -384,6 +389,9 @@
     "home": "Vai alla home"
   },
   "chat": {
+    "available": "Disponibile per le tue date",
+    "save": "Risparmia {pct}%",
+    "askDates": "Indicami le date di ritiro e riconsegna e ti mostro prezzi e disponibilità in tempo reale.",
     "title": "Touristas AI",
     "subtitle": "Il concierge di Naxos Auto Rent",
     "statusLive": "Online",

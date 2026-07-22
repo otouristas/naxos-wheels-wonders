@@ -2,15 +2,19 @@ import { fleet, type Vehicle } from "@/lib/fleet-data";
 import { recommendFleet, type QuizAnswers } from "@/lib/recommend";
 import { guideArticles } from "@/lib/guide-data";
 import { whatsappUrl } from "@/lib/discover-cyclades";
-import { buildBookingUrl } from "@/lib/site-config";
+import { buildBookingUrl, type BookingLocationKey } from "@/lib/site-config";
 
 export type ChatDraft = {
   bookingActive?: boolean;
   recommendationsOffered?: boolean;
+  awaitingDates?: boolean;
   vehicleSlug?: string;
   vehicleName?: string;
+  /** ISO yyyy-mm-dd */
   from?: string;
+  /** ISO yyyy-mm-dd */
   to?: string;
+  pickupKey?: BookingLocationKey;
   partySize?: number;
   transmission?: "manual" | "automatic";
   vibe?: QuizAnswers["vibe"];
@@ -32,6 +36,11 @@ export type ChatVehicleCard = {
   fromPrice?: number | null;
   bookUrl?: string;
   whatsappUrl?: string;
+  /** Live availability enrichment (present only when a trip window is known). */
+  available?: boolean;
+  liveTotal?: number | null;
+  normalTotal?: number | null;
+  discountPct?: number | null;
 };
 
 export type LocalChatCard =
@@ -52,7 +61,7 @@ export type LocalChatReply = {
   draft: ChatDraft;
 };
 
-function toCard(v: Vehicle): ChatVehicleCard {
+export function toChatCard(v: Vehicle): ChatVehicleCard {
   const book = buildBookingUrl();
   const wa = whatsappUrl(
     `Hello Naxos Auto Rent, I'd like to enquire about the ${v.name}.\n\nSent via Touristas AI on naxosautorent.com`,
@@ -76,6 +85,8 @@ function copy(locale: string) {
     string,
     {
       recommend: string;
+      recommendLive: string;
+      askDates: string;
       fleet: string;
       delivery: string;
       guide: string;
@@ -90,6 +101,8 @@ function copy(locale: string) {
   > = {
     en: {
       recommend: "Here are the best matches from our fleet for your trip, with insurance, unlimited mileage and free airport/port delivery included.",
+      recommendLive: "Here are cars available for your exact dates, with live prices, insurance, unlimited mileage and free airport/port delivery included.",
+      askDates: "Tell me your pick-up and drop-off dates and I'll show live prices and availability for these cars.",
       fleet: "Here's a look at popular picks from our Naxos fleet. Tap a car to view details or book online.",
       delivery: "We deliver and collect for free at Naxos Airport, the port, and most accommodations on the island. Just tell us where you're staying when you book.",
       guide: "These local guides should help: beaches, villages, road trips and driving tips.",
@@ -103,6 +116,8 @@ function copy(locale: string) {
     },
     el: {
       recommend: "Ιδού οι καλύτερες επιλογές από τον στόλο μας, με ασφάλεια, απεριόριστα χιλιόμετρα και δωρεάν παράδοση.",
+      recommendLive: "Ιδού αυτοκίνητα διαθέσιμα για τις ακριβείς ημερομηνίες σας, με ζωντανές τιμές, ασφάλεια, απεριόριστα χιλιόμετρα και δωρεάν παράδοση.",
+      askDates: "Πείτε μου ημερομηνίες παραλαβής και επιστροφής και θα σας δείξω ζωντανές τιμές και διαθεσιμότητα.",
       fleet: "Δημοφιλείς επιλογές από τον στόλο μας στη Νάξο. Πατήστε για λεπτομέρειες ή κράτηση.",
       delivery: "Παραδίδουμε και παραλαμβάνουμε δωρεάν στο αεροδρόμιο, το λιμάνι και τα περισσότερα καταλύματα.",
       guide: "Αυτοί οι τοπικοί οδηγοί θα σας βοηθήσουν: παραλίες, χωριά, οδικά δρομολόγια.",
@@ -116,6 +131,84 @@ function copy(locale: string) {
     },
   };
   return map[locale] ?? map.en;
+}
+
+const MONTHS: Record<string, number> = {
+  jan: 1, january: 1, feb: 2, february: 2, mar: 3, march: 3, apr: 4, april: 4,
+  may: 5, jun: 6, june: 6, jul: 7, july: 7, aug: 8, august: 8, sep: 9,
+  sept: 9, september: 9, oct: 10, october: 10, nov: 11, november: 11,
+  dec: 12, december: 12,
+};
+
+function isoDate(day: number, month: number, year?: number): string | null {
+  if (!Number.isFinite(day) || !Number.isFinite(month) || month < 1 || month > 12 || day < 1 || day > 31) {
+    return null;
+  }
+  const now = new Date();
+  let y = year ?? now.getFullYear();
+  if (!year) {
+    const candidate = Date.UTC(y, month - 1, day);
+    const todayUtc = Date.UTC(now.getFullYear(), now.getMonth(), now.getDate());
+    if (candidate < todayUtc) y += 1;
+  }
+  return `${y}-${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+}
+
+function orderRange(a: string, b: string): { from: string; to: string } {
+  return a <= b ? { from: a, to: b } : { from: b, to: a };
+}
+
+/**
+ * Best-effort extraction of a pick-up/drop-off date range from free text.
+ * Handles ISO ranges, "12-18 Aug", "Aug 12-18", "12 Aug to 18 Aug" and
+ * numeric "12/08 to 18/08" forms. Returns null when nothing usable is found.
+ */
+export function parseTripDates(message: string): { from: string; to: string } | null {
+  const m = message.toLowerCase();
+  const sep = "(?:to|until|till|through|thru|\\-|–|—|>)";
+
+  // 1. ISO range: 2026-08-12 to 2026-08-18
+  let match = m.match(new RegExp(`(\\d{4}-\\d{2}-\\d{2})\\s*${sep}\\s*(\\d{4}-\\d{2}-\\d{2})`));
+  if (match) return orderRange(match[1], match[2]);
+
+  // 2. Two "day month" mentions: 12 Aug to 18 August
+  match = m.match(/\b(\d{1,2})\s+([a-z]{3,})\b[\s\S]*?\b(\d{1,2})\s+([a-z]{3,})\b/);
+  if (match && MONTHS[match[2]] && MONTHS[match[4]]) {
+    const from = isoDate(Number(match[1]), MONTHS[match[2]]);
+    const to = isoDate(Number(match[3]), MONTHS[match[4]]);
+    if (from && to) return orderRange(from, to);
+  }
+
+  // 3. "12-18 Aug" (day range, single month after)
+  match = m.match(new RegExp(`\\b(\\d{1,2})\\s*${sep}\\s*(\\d{1,2})\\s+([a-z]{3,})`));
+  if (match && MONTHS[match[3]]) {
+    const from = isoDate(Number(match[1]), MONTHS[match[3]]);
+    const to = isoDate(Number(match[2]), MONTHS[match[3]]);
+    if (from && to) return orderRange(from, to);
+  }
+
+  // 4. "Aug 12-18" (month first, day range)
+  match = m.match(new RegExp(`\\b([a-z]{3,})\\s+(\\d{1,2})\\s*${sep}\\s*(\\d{1,2})`));
+  if (match && MONTHS[match[1]]) {
+    const from = isoDate(Number(match[2]), MONTHS[match[1]]);
+    const to = isoDate(Number(match[3]), MONTHS[match[1]]);
+    if (from && to) return orderRange(from, to);
+  }
+
+  // 5. Numeric dd/mm(/yyyy) range: 12/08 to 18/08/2026
+  match = m.match(
+    new RegExp(
+      `\\b(\\d{1,2})[/.](\\d{1,2})(?:[/.](\\d{2,4}))?\\s*${sep}\\s*(\\d{1,2})[/.](\\d{1,2})(?:[/.](\\d{2,4}))?`,
+    ),
+  );
+  if (match) {
+    const yr = (v?: string) => (v ? (v.length === 2 ? 2000 + Number(v) : Number(v)) : undefined);
+    const from = isoDate(Number(match[1]), Number(match[2]), yr(match[3]));
+    const to = isoDate(Number(match[4]), Number(match[5]), yr(match[6]));
+    if (from && to) return orderRange(from, to);
+  }
+
+  return null;
 }
 
 function extractIntent(message: string, draft: ChatDraft): ChatDraft {
@@ -146,6 +239,18 @@ function extractIntent(message: string, draft: ChatDraft): ChatDraft {
 
   const party = m.match(/\b([2-9]|1[0-2])\s*(people|persons|adults|seats|άτομα|personen|persone)\b/);
   if (party) next.partySize = Number(party[1]);
+
+  // Pick-up location keyword
+  if (/\bairport\b|αεροδρόμ|a[eé]roport|flughafen|luchthaven/.test(m)) next.pickupKey = "airport";
+  else if (/\bport\b|λιμάν|porto|hafen|haven/.test(m)) next.pickupKey = "port";
+
+  // Trip dates for live availability
+  const dates = parseTripDates(message);
+  if (dates) {
+    next.from = dates.from;
+    next.to = dates.to;
+    next.awaitingDates = false;
+  }
 
   return next;
 }
@@ -225,7 +330,17 @@ export function answerTouristasLocal(
     return { text, cards, followUps, draft: nextDraft };
   }
 
-  if (wantsFleet(message) || wantsRecommend(message) || nextDraft.group || nextDraft.vibe) {
+  const justProvidedDates =
+    Boolean(nextDraft.from && nextDraft.to) &&
+    (draft.awaitingDates || draft.recommendationsOffered);
+
+  if (
+    wantsFleet(message) ||
+    wantsRecommend(message) ||
+    nextDraft.group ||
+    nextDraft.vibe ||
+    justProvidedDates
+  ) {
     const answers: QuizAnswers = {
       group: nextDraft.group,
       budget: nextDraft.budget,
@@ -234,14 +349,17 @@ export function answerTouristasLocal(
       notes: message,
     };
     const picks = recommendFleet(answers, wantsFleet(message) ? 4 : 3);
-    text = wantsFleet(message) ? c.fleet : c.recommend;
+    const hasDates = Boolean(nextDraft.from && nextDraft.to);
+    text = wantsFleet(message) ? c.fleet : hasDates ? c.recommendLive : c.recommend;
     cards.push({
       kind: "recommend",
-      vehicles: picks.map((p) => toCard(p.vehicle)),
+      vehicles: picks.map((p) => toChatCard(p.vehicle)),
       from: nextDraft.from,
       to: nextDraft.to,
     });
     nextDraft.recommendationsOffered = true;
+    // Nudge for dates so the route can enrich with live availability.
+    nextDraft.awaitingDates = !hasDates;
     if (picks[0]) {
       nextDraft.vehicleSlug = picks[0].vehicle.slug;
       nextDraft.vehicleName = picks[0].vehicle.name;
@@ -256,7 +374,7 @@ export function answerTouristasLocal(
 
   // Default: show a couple of popular cars so the chat always feels useful
   const popular = fleet.slice(0, 3);
-  cards.push({ kind: "recommend", vehicles: popular.map(toCard) });
+  cards.push({ kind: "recommend", vehicles: popular.map(toChatCard) });
   followUps.push(
     { type: "message", label: c.followFamily },
     { type: "message", label: c.followEco },

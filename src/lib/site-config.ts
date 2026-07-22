@@ -99,10 +99,10 @@ export type BookingParams = {
 };
 
 /**
- * Build a deep-link into the on-site live availability engine.
- * Same query contract as the WordPress iosrt book page.
+ * Build the raw iosrt engine query params (same contract as the WordPress book
+ * page). Shared by the on-site deep-link and the server-side availability fetch.
  */
-export function buildBookingUrl(params: BookingParams = {}): string {
+export function buildBookingQuery(params: BookingParams = {}): Record<string, string> {
   const {
     pickupKey,
     dropoffKey,
@@ -114,19 +114,29 @@ export function buildBookingUrl(params: BookingParams = {}): string {
     dropMin = "00",
   } = params;
 
-  const q = new URLSearchParams();
-  q.set("picklid", String(locationId(pickupKey)));
-  q.set("pickhour", pickHour);
-  q.set("pickmin", pickMin);
-  if (pickDate) q.set("pickdate", toEngineDate(pickDate));
-  q.set("droplid", String(locationId(dropoffKey ?? pickupKey)));
-  q.set("drophour", dropHour);
-  q.set("dropmin", dropMin);
-  if (dropDate) q.set("dropdate", toEngineDate(dropDate));
-  q.set("agid", "0");
-  q.set("vtype", "car");
-  q.set("step", "1");
+  const q: Record<string, string> = {
+    picklid: String(locationId(pickupKey)),
+    pickhour: pickHour,
+    pickmin: pickMin,
+    droplid: String(locationId(dropoffKey ?? pickupKey)),
+    drophour: dropHour,
+    dropmin: dropMin,
+    agid: "0",
+    vtype: "car",
+    step: "1",
+  };
+  if (pickDate) q.pickdate = toEngineDate(pickDate);
+  if (dropDate) q.dropdate = toEngineDate(dropDate);
 
+  return q;
+}
+
+/**
+ * Build a deep-link into the on-site live availability engine.
+ * Same query contract as the WordPress iosrt book page.
+ */
+export function buildBookingUrl(params: BookingParams = {}): string {
+  const q = new URLSearchParams(buildBookingQuery(params));
   return `${BOOKING_PATH}?${q.toString()}` as "/book";
 }
 

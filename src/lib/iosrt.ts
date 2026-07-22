@@ -197,6 +197,7 @@ export function parseAvailabilityCars(html: string): ParsedCar[] {
 export async function fetchLiveBookingHtml(
   query: BookQuery,
   bookPath: string,
+  revalidateSeconds = 0,
 ): Promise<LiveBookingPayload> {
   const upstream = buildUpstreamBookUrl(query);
   const res = await fetch(upstream, {
@@ -204,7 +205,7 @@ export async function fetchLiveBookingHtml(
       accept: "text/html",
       "user-agent": "NaxosAutoRent/1.0",
     },
-    next: { revalidate: 0 },
+    next: { revalidate: revalidateSeconds },
   });
 
   if (!res.ok) {
