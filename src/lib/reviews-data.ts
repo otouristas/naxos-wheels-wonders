@@ -4,7 +4,143 @@ export type Review = {
   rating: number;
   text: string;
   source: "Google";
+  /** Optional explicit language override (BCP-47 primary subtag). */
+  lang?: string;
 };
+
+export type ReviewWithLang = Review & { lang: string };
+
+const GREEK_RE = /[\u0370-\u03FF\u1F00-\u1FFF]/;
+
+const STOPWORDS: Record<string, string[]> = {
+  it: [
+    "il",
+    "la",
+    "lo",
+    "gli",
+    "le",
+    "di",
+    "da",
+    "per",
+    "con",
+    "una",
+    "uno",
+    "che",
+    "non",
+    "sono",
+    "molto",
+    "tutto",
+    "auto",
+    "abbiamo",
+    "esperienza",
+    "consigliatissimo",
+    "gentile",
+    "macchina",
+  ],
+  es: [
+    "el",
+    "la",
+    "los",
+    "las",
+    "de",
+    "del",
+    "que",
+    "con",
+    "para",
+    "una",
+    "muy",
+    "todo",
+    "estuvo",
+    "perfecto",
+    "excelente",
+    "recomiendo",
+    "alquiler",
+    "coche",
+    "auto",
+    "atención",
+  ],
+  fr: [
+    "le",
+    "la",
+    "les",
+    "des",
+    "une",
+    "un",
+    "et",
+    "pour",
+    "avec",
+    "très",
+    "nous",
+    "vous",
+    "est",
+    "sont",
+    "voiture",
+    "location",
+    "service",
+    "recommand",
+    "parfait",
+    "merci",
+  ],
+  de: [
+    "der",
+    "die",
+    "das",
+    "und",
+    "mit",
+    "für",
+    "von",
+    "wir",
+    "sehr",
+    "auto",
+    "war",
+    "uns",
+    "super",
+    "empfehlen",
+    "freundlich",
+    "haben",
+    "alles",
+    "zum",
+  ],
+};
+
+/** Best-effort language detection for review text. */
+export function detectReviewLang(text: string): string {
+  if (GREEK_RE.test(text)) return "el";
+
+  const tokens = text
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/\p{M}/gu, "")
+    .split(/[^a-zàâäéèêëïîôùûüçñßæœ]+/i)
+    .filter((t) => t.length > 1);
+
+  if (tokens.length === 0) return "en";
+
+  const scores: Record<string, number> = { it: 0, es: 0, fr: 0, de: 0 };
+  for (const token of tokens) {
+    for (const [lang, words] of Object.entries(STOPWORDS)) {
+      if (words.some((w) => token === w || token.startsWith(w))) {
+        scores[lang] = (scores[lang] ?? 0) + 1;
+      }
+    }
+  }
+
+  let best = "en";
+  let bestScore = 0;
+  for (const [lang, score] of Object.entries(scores)) {
+    if (score > bestScore) {
+      best = lang;
+      bestScore = score;
+    }
+  }
+
+  // Need a few hits to avoid English false positives from shared words like "auto".
+  return bestScore >= 3 ? best : "en";
+}
+
+export function resolveReviewLang(review: Review): string {
+  return review.lang ?? detectReviewLang(review.text);
+}
 
 export type FleetReviewCaption = {
   author: string;
@@ -811,3 +947,8 @@ export const fleetReviewCaptions: Record<string, FleetReviewCaption> = {
 export function getFleetReviewCaption(slug: string) {
   return fleetReviewCaptions[slug];
 }
+
+/** Newest-first reviews with resolved language codes. */
+export const reviewsSorted: ReviewWithLang[] = [...reviews]
+  .sort((a, b) => b.date.localeCompare(a.date))
+  .map((r) => ({ ...r, lang: resolveReviewLang(r) }));

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { memo, useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { Link, usePathname, useRouter } from "@/i18n/navigation";
@@ -79,12 +79,12 @@ export function TouristasChat({
   const prefersReduced = useReducedMotion();
   const [open, setOpen] = useState(autoOpen);
   const [expanded, setExpanded] = useState(false);
-  const [input, setInput] = useState("");
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [draft, setDraft] = useState<ChatDraft>({});
   const [followUps, setFollowUps] = useState<ChatFollowUp[]>([]);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [composerKey, setComposerKey] = useState(0);
   const listRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const pathWhenOpened = useRef<string | null>(null);
@@ -212,15 +212,23 @@ export function TouristasChat({
     return () => window.removeEventListener("keydown", onKey);
   }, [open, pathname]);
 
+  // Only lock the page scroll when the panel is a full-screen modal (mobile or
+  // expanded). On desktop it's a corner widget, so the site stays usable.
   useEffect(() => {
     if (!open) return;
+    const isMobile = window.matchMedia("(max-width: 767px)").matches;
+    if (!isMobile && !expanded) return;
     const prev = document.body.style.overflow;
     document.body.style.overflow = "hidden";
-    const focusTimer = window.setTimeout(() => inputRef.current?.focus(), 180);
     return () => {
       document.body.style.overflow = prev;
-      window.clearTimeout(focusTimer);
     };
+  }, [open, expanded]);
+
+  useEffect(() => {
+    if (!open) return;
+    const focusTimer = window.setTimeout(() => inputRef.current?.focus(), 180);
+    return () => window.clearTimeout(focusTimer);
   }, [open]);
 
   useEffect(() => {
@@ -280,7 +288,7 @@ export function TouristasChat({
     setDraft({});
     draftRef.current = {};
     setFollowUps([]);
-    setInput("");
+    setComposerKey((k) => k + 1);
     setError(null);
     try {
       sessionStorage.removeItem(DRAFT_STORAGE_KEY);
@@ -335,14 +343,6 @@ export function TouristasChat({
       closeChat();
       window.open(url, "_blank", "noopener,noreferrer");
     }
-  }
-
-  async function onSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    const text = input.trim();
-    if (!text) return;
-    setInput("");
-    await ask(text);
   }
 
   const progressBits = draftSummaryBits(draft, locale);
@@ -512,22 +512,14 @@ export function TouristasChat({
             </div>
 
             <footer className="shrink-0 border-t border-primary/10 bg-white px-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-3 md:px-4">
-              <form onSubmit={onSubmit} className="flex items-end gap-2">
-                <input
-                  ref={inputRef}
-                  value={input}
-                  onChange={(e) => setInput(e.target.value)}
-                  placeholder={draft.awaitingDates ? t("placeholderDates") : t("placeholder")}
-                  className="min-h-12 flex-1 rounded-2xl border border-primary/12 bg-secondary px-4 py-3 text-sm outline-none ring-primary/20 focus:ring-2"
-                />
-                <button
-                  type="submit"
-                  disabled={busy || !input.trim()}
-                  className="inline-flex h-12 shrink-0 items-center justify-center rounded-2xl bg-primary px-5 text-sm font-semibold text-primary-foreground transition hover:brightness-110 disabled:opacity-40"
-                >
-                  {t("send")}
-                </button>
-              </form>
+              <Composer
+                key={composerKey}
+                inputRef={inputRef}
+                busy={busy}
+                placeholder={draft.awaitingDates ? t("placeholderDates") : t("placeholder")}
+                sendLabel={t("send")}
+                onSend={(text) => void ask(text)}
+              />
               <div className="mt-2.5 space-y-1 text-center">
                 <p className="text-[11px] text-muted-foreground">
                   {t("poweredBy")}{" "}
@@ -553,6 +545,54 @@ export function TouristasChat({
     </>
   );
 }
+
+/**
+ * Isolated message composer. Keeping the input's state here means typing does
+ * not re-render the whole chat panel (messages, cards, launcher), which keeps
+ * the UI responsive.
+ */
+const Composer = memo(function Composer({
+  inputRef,
+  busy,
+  placeholder,
+  sendLabel,
+  onSend,
+}: {
+  inputRef: React.RefObject<HTMLInputElement | null>;
+  busy: boolean;
+  placeholder: string;
+  sendLabel: string;
+  onSend: (text: string) => void;
+}) {
+  const [value, setValue] = useState("");
+
+  function submit(e: React.FormEvent) {
+    e.preventDefault();
+    const text = value.trim();
+    if (!text || busy) return;
+    setValue("");
+    onSend(text);
+  }
+
+  return (
+    <form onSubmit={submit} className="flex items-end gap-2">
+      <input
+        ref={inputRef}
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
+        placeholder={placeholder}
+        className="min-h-12 flex-1 rounded-2xl border border-primary/12 bg-secondary px-4 py-3 text-sm outline-none ring-primary/20 focus:ring-2"
+      />
+      <button
+        type="submit"
+        disabled={busy || !value.trim()}
+        className="inline-flex h-12 shrink-0 items-center justify-center rounded-2xl bg-primary px-5 text-sm font-semibold text-primary-foreground transition hover:brightness-110 disabled:opacity-40"
+      >
+        {sendLabel}
+      </button>
+    </form>
+  );
+});
 
 function TouristasMark({ className }: { className?: string }) {
   return (

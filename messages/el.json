@@ -339,8 +339,18 @@
     "writeReview": "Γράψτε μια κριτική",
     "verified": "Επαληθευμένη κριτική Google",
     "showing": "Εμφανίζονται {shown} πρόσφατες κριτικές Google από το προφίλ μας.",
+    "showingOf": "Εμφανίζονται {shown} από {total}",
     "googleCount": "{count} κριτικές Google",
-    "viewOnGoogle": "Δείτε στο Google"
+    "viewOnGoogle": "Δείτε στο Google",
+    "fiveStar": "100% κριτικές 5 αστέρων",
+    "sortLabel": "Ταξινόμηση",
+    "sortNewest": "Νεότερες",
+    "sortOldest": "Παλαιότερες",
+    "filterLanguage": "Γλώσσα",
+    "allLanguages": "Όλες",
+    "loadMore": "Φόρτωση περισσότερων",
+    "readMore": "Διαβάστε περισσότερα",
+    "readLess": "Λιγότερα"
   },
   "footer": {
     "tagline": "Naxos Rent A Car by Auto Rent, καλύτερες τιμές, δωρεάν παράδοση. Τοπική οικογενειακή επιχείρηση, στη διάθεσή σας από το 1998.",

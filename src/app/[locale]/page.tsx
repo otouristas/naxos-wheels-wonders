@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { Star, Banknote, Truck, Car, Compass, ArrowRight, Quote, MapPin } from "lucide-react";
+import { Star, Banknote, Truck, Car, Compass, ArrowRight, MapPin, ExternalLink } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { SectionLabel } from "@/components/site/section-label";
 import { HomeHero } from "@/components/site/home-hero";
 import { FleetCard } from "@/components/site/fleet-card";
 import { TouristasFinder } from "@/components/site/touristas-finder";
+import { GoogleG } from "@/components/site/google-g";
+import { ReviewCard } from "@/components/site/review-card";
 import { fleet } from "@/lib/fleet-data";
 import { guideArticles } from "@/lib/guide-data";
 import { blogPosts } from "@/lib/blog-data";
-import { reviews } from "@/lib/reviews-data";
+import { reviewsSorted } from "@/lib/reviews-data";
 import { siteConfig, buildBookingUrl, bookingLocations } from "@/lib/site-config";
 import { buildAlternates } from "@/lib/seo";
 
@@ -49,7 +51,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   const featuredFleet = fleet.slice(0, 6);
   const featuredGuides = guideArticles.slice(0, 3);
   const featuredPosts = blogPosts.slice(0, 3);
-  const featuredReviews = reviews.slice(0, 3);
+  const featuredReviews = reviewsSorted.slice(0, 3);
+  const tr = await getTranslations("reviews");
 
   return (
     <>
@@ -183,36 +186,55 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
               count: siteConfig.reviewCount,
             })}
           </p>
+          <div className="mt-5 inline-flex items-center gap-3 rounded-2xl border border-border bg-white px-4 py-2.5 shadow-sunny">
+            <GoogleG className="h-5 w-5" title="Google" />
+            <span className="font-heading text-2xl font-extrabold text-primary">
+              {siteConfig.rating.toFixed(1)}
+            </span>
+            <div className="flex" aria-hidden>
+              {Array.from({ length: 5 }).map((_, i) => (
+                <Star key={i} className="h-3.5 w-3.5 fill-[#FBBC04] text-[#FBBC04]" />
+              ))}
+            </div>
+            <span className="text-xs font-semibold text-muted-foreground">
+              {tr("googleCount", { count: siteConfig.reviewCount })}
+            </span>
+            <a
+              href={siteConfig.mapUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 text-xs font-bold text-primary hover:underline"
+            >
+              {tr("viewOnGoogle")}
+              <ExternalLink className="h-3 w-3" />
+            </a>
+          </div>
         </div>
 
-        <div className="mt-10 grid gap-5 md:grid-cols-3">
+        <div className="mt-10 grid items-start gap-5 md:grid-cols-3">
           {featuredReviews.map((r) => (
-            <figure
-              key={r.author}
-              className="flex flex-col rounded-3xl border border-border bg-white p-6 shadow-sunny"
-            >
-              <div className="flex items-center justify-between">
-                <Quote className="h-7 w-7 text-primary/25" />
-                <div className="flex">
-                  {Array.from({ length: r.rating }).map((_, i) => (
-                    <Star key={i} className="h-4 w-4 fill-accent text-accent" />
-                  ))}
-                </div>
-              </div>
-              <blockquote className="mt-4 flex-1 text-sm leading-relaxed text-foreground">
-                “{r.text}”
-              </blockquote>
-              <figcaption className="mt-5 border-t border-border pt-4 text-sm font-bold">
-                {r.author}
-              </figcaption>
-            </figure>
+            <ReviewCard
+              key={`${r.author}-${r.date}`}
+              review={r}
+              locale={locale}
+              expandable={false}
+            />
           ))}
         </div>
-        <div className="mt-10 text-center">
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
           <Link href="/reviews" className="btn-blue">
             {tc("seeAll")}
             <ArrowRight className="h-4 w-4" />
           </Link>
+          <a
+            href={siteConfig.social.googleReview}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary"
+          >
+            <GoogleG className="h-4 w-4" />
+            {tr("writeReview")}
+          </a>
         </div>
       </section>
 

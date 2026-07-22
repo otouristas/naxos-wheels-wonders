@@ -339,8 +339,18 @@
     "writeReview": "Scrivi una recensione",
     "verified": "Recensione Google verificata",
     "showing": "Mostriamo {shown} recensioni Google recenti dal nostro profilo.",
+    "showingOf": "Mostro {shown} di {total}",
     "googleCount": "{count} recensioni Google",
-    "viewOnGoogle": "Vedi su Google"
+    "viewOnGoogle": "Vedi su Google",
+    "fiveStar": "100% recensioni a 5 stelle",
+    "sortLabel": "Ordina",
+    "sortNewest": "Più recenti",
+    "sortOldest": "Più vecchie",
+    "filterLanguage": "Lingua",
+    "allLanguages": "Tutte",
+    "loadMore": "Carica altre",
+    "readMore": "Leggi di più",
+    "readLess": "Mostra meno"
   },
   "footer": {
     "tagline": "Naxos Rent A Car by Auto Rent, migliori tariffe, consegna gratuita. Azienda familiare locale, al tuo servizio dal 1998.",

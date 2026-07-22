@@ -339,8 +339,18 @@
     "writeReview": "Schrijf een review",
     "verified": "Geverifieerde Google-review",
     "showing": "{shown} recente Google-reviews van ons live profiel.",
+    "showingOf": "{shown} van {total} weergegeven",
     "googleCount": "{count} Google-reviews",
-    "viewOnGoogle": "Bekijk op Google"
+    "viewOnGoogle": "Bekijk op Google",
+    "fiveStar": "100% 5-sterrenreviews",
+    "sortLabel": "Sorteren",
+    "sortNewest": "Nieuwste",
+    "sortOldest": "Oudste",
+    "filterLanguage": "Taal",
+    "allLanguages": "Alle",
+    "loadMore": "Meer laden",
+    "readMore": "Lees meer",
+    "readLess": "Minder tonen"
   },
   "footer": {
     "tagline": "Naxos Rent A Car by Auto Rent, beste tarieven, gratis levering. Lokaal familiebedrijf, tot uw dienst sinds 1998.",
