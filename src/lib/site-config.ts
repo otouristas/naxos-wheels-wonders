@@ -10,7 +10,7 @@ export const siteConfig = {
   mhte: "1174Ε81001132001",
   gemi: "175531838000",
   rating: 5.0,
-  reviewCount: 381,
+  reviewCount: 420,
   social: {
     facebook: "https://www.facebook.com/naxosautorent",
     google: "https://g.page/naxosautorent",

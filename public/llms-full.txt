@@ -1,6 +1,6 @@
 # Naxos Auto Rent, full site outline
 
-> Naxos Auto Rent is a local, family-run car rental company in Galanado, Naxos (Cyclades, Greece), renting cars since 1998. Prices are all-inclusive: taxes and VAT, third-party insurance, theft protection, unlimited mileage, a free additional driver, free delivery and collection at Naxos Airport, Naxos Port and any accommodation, plus 24/7 road assistance. Rated 5.0 from 381+ Google reviews. The site is available in English, Greek, Italian, French, German and Dutch, with an AI car finder called Touristas AI.
+> Naxos Auto Rent is a local, family-run car rental company in Galanado, Naxos (Cyclades, Greece), renting cars since 1998. Prices are all-inclusive: taxes and VAT, third-party insurance, theft protection, unlimited mileage, a free additional driver, free delivery and collection at Naxos Airport, Naxos Port and any accommodation, plus 24/7 road assistance. Rated 5.0 from 420+ Google reviews. The site is available in English, Greek, Italian, French, German and Dutch, with an AI car finder called Touristas AI.
 
 ## Contact and company
 - Name: Naxos Auto Rent

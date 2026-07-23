@@ -8,7 +8,6 @@ import {
   Menu,
   X,
   Phone,
-  MessageCircle,
   Star,
   Check,
   ArrowUpRight,
@@ -197,14 +196,17 @@ export function SiteNav() {
             </Link>
           </div>
 
-          <button
-            aria-label={open ? t("closeMenu") : t("openMenu")}
-            onClick={() => setOpen((v) => !v)}
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-secondary text-primary lg:hidden"
-            type="button"
-          >
-            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </button>
+          <div className="flex items-center gap-2 lg:hidden">
+            <LocaleSwitcher />
+            <button
+              aria-label={open ? t("closeMenu") : t("openMenu")}
+              onClick={() => setOpen((v) => !v)}
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-secondary text-primary"
+              type="button"
+            >
+              {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -317,24 +319,13 @@ export function SiteNav() {
               >
                 {tc("bookOnline")}
               </Link>
-              <div className="grid grid-cols-2 gap-3">
-                <a
-                  href={`tel:${siteConfig.phonePrimaryHref}`}
-                  className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-primary px-4 py-3 text-sm font-bold text-primary"
-                >
-                  <Phone className="h-4 w-4" />
-                  {tc("call")}
-                </a>
-                <a
-                  href={`https://wa.me/${siteConfig.whatsappHref}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-primary px-4 py-3 text-sm font-bold text-primary"
-                >
-                  <MessageCircle className="h-4 w-4" />
-                  {tc("whatsapp")}
-                </a>
-              </div>
+              <a
+                href={`tel:${siteConfig.phonePrimaryHref}`}
+                className="inline-flex w-full items-center justify-center gap-2 rounded-full border-2 border-primary px-4 py-3 text-sm font-bold text-primary"
+              >
+                <Phone className="h-4 w-4" />
+                {tc("call")}
+              </a>
 
               <button
                 type="button"
@@ -347,13 +338,6 @@ export function SiteNav() {
                 <Sparkles className="h-4 w-4 text-primary" />
                 {tc("askAi")}
               </button>
-
-              <div>
-                <p className="mb-2 text-[11px] font-bold uppercase tracking-[0.16em] text-muted-foreground">
-                  {t("language")}
-                </p>
-                <LocaleSwitcher variant="grid" />
-              </div>
             </div>
           </motion.div>
         ) : null}
