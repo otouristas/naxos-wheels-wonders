@@ -39,3 +39,6 @@ lerna-debug.log*
 
 # Firecrawl scrape cache
 .firecrawl
+
+# Local scrape / debug artifacts
+.tmp

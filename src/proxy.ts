@@ -4,6 +4,6 @@ import { routing } from "./i18n/routing";
 export default createMiddleware(routing);
 
 export const config = {
-  // Skip API, Next internals, and static files (robots.txt, sitemap.xml, icons, etc.)
-  matcher: "/((?!api|_next|_vercel|.*\\..*).*)",
-}
+  // Never run i18n middleware on API, internals, or file-like paths (sitemap.xml, robots.txt, assets).
+  matcher: ["/((?!api|_next|_vercel|sitemap\\.xml|robots\\.txt|.*\\..*).*)"],
+};
