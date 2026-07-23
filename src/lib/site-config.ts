@@ -11,6 +11,10 @@ export const siteConfig = {
   gemi: "175531838000",
   rating: 5.0,
   reviewCount: 420,
+  /** Google Analytics 4 measurement ID */
+  gaId: "G-GQ5WQRJBQL",
+  /** Google Search Console HTML tag verification */
+  googleSiteVerification: "H6R3B_izMZTbFDUal3VUsHUiIQ2CIi1liVRB1Zxxm8E",
   social: {
     facebook: "https://www.facebook.com/naxosautorent",
     google: "https://g.page/naxosautorent",

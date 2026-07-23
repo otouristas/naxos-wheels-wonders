@@ -30,6 +30,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return paths.map((path) => {
     const languages: Record<string, string> = {};
     for (const l of locales) languages[l] = absoluteUrl(l, path);
+    languages["x-default"] = absoluteUrl(routing.defaultLocale, path);
     return {
       url: absoluteUrl(routing.defaultLocale, path),
       lastModified: new Date(),

@@ -10,6 +10,7 @@ import { SiteFooter } from "@/components/site/footer";
 import { MobileBookBar } from "@/components/site/mobile-book-bar";
 import { TouristasFloatingChat } from "@/components/site/touristas-floating-chat";
 import { OrganizationSchema } from "@/components/site/structured-data";
+import { GoogleAnalytics } from "@/components/site/google-analytics";
 import { siteConfig } from "@/lib/site-config";
 import { buildAlternates } from "@/lib/seo";
 import "../globals.css";
@@ -78,6 +79,9 @@ export async function generateMetadata({
       apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
       shortcut: "/favicon.ico",
     },
+    verification: {
+      google: siteConfig.googleSiteVerification,
+    },
   };
 }
 
@@ -101,6 +105,7 @@ export default async function LocaleLayout({
       suppressHydrationWarning
     >
       <body className="font-sans antialiased">
+        <GoogleAnalytics />
         <NextIntlClientProvider>
           <OrganizationSchema />
           <div className="flex min-h-screen flex-col pb-20 md:pb-0">
