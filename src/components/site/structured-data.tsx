@@ -11,7 +11,9 @@ export function OrganizationSchema() {
     <JsonLd
       data={{
         "@context": "https://schema.org",
-        "@type": "CarRental",
+        // LocalBusiness is required for Google Review Snippet eligibility;
+        // CarRental alone triggers "Invalid object type for field" in GSC.
+        "@type": ["CarRental", "LocalBusiness"],
         name: siteConfig.name,
         image: `${siteConfig.domain}/naxos/hero.jpg`,
         url: siteConfig.domain,
