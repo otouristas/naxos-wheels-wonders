@@ -251,7 +251,14 @@ export function SiteFooter() {
               className="hover:text-primary-foreground"
             >
               {t("designedBy")}{" "}
-              <span className="font-semibold text-primary-foreground/75">AnotherSEOGuru</span>
+              <Image
+                src="/images/brand/credits/anotherseoguru.svg"
+                alt="AnotherSEOGuru"
+                width={106}
+                height={24}
+                className="ml-1 inline-block h-6 w-auto align-middle"
+                unoptimized
+              />
             </a>
             <a
               href="https://touristas.ai"
@@ -260,7 +267,14 @@ export function SiteFooter() {
               className="hover:text-primary-foreground"
             >
               {t("poweredBy")}{" "}
-              <span className="font-semibold text-primary-foreground/75">Touristas AI</span>
+              <Image
+                src="/images/brand/credits/touristas-ai-white.png"
+                alt="Touristas AI"
+                width={92}
+                height={19}
+                className="ml-1 inline-block h-[19px] w-auto align-middle"
+                unoptimized
+              />
             </a>
             <a
               href={discoverCycladesUrl(locale, "")}
@@ -269,11 +283,11 @@ export function SiteFooter() {
               className="inline-flex items-center gap-2 transition hover:opacity-90"
             >
               <Image
-                src="https://discovercyclades.gr/favicon.svg"
+                src="/images/brand/credits/discover-cyclades.png"
                 alt=""
-                width={20}
-                height={20}
-                className="h-5 w-5"
+                width={24}
+                height={24}
+                className="h-6 w-6 rounded-full bg-white"
               />
               <span className="leading-tight">
                 <span className="block text-xs font-bold text-primary-foreground">
