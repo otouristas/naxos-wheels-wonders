@@ -1,4 +1,10 @@
+Last-Updated: 2026-10-21
+Canonical: https://naxos-car-rental.com/llms.txt
+Long-form: https://naxos-car-rental.com/llms-full.txt
+Sitemap: https://naxos-car-rental.com/sitemap.xml
+
 # Naxos Auto Rent
+Source: https://naxos-car-rental.com
 
 > Naxos Auto Rent is a local, family-run car rental company based in Galanado, Naxos (Cyclades, Greece), serving travellers since 1998. We offer transparent all-inclusive pricing, free delivery and collection at Naxos Airport, Naxos Port and accommodations, unlimited mileage, a free additional driver and 24/7 road assistance. Rated 5.0 from 420+ Google reviews.
 
